@@ -61,18 +61,13 @@ public class TimeUtil {
     }
 
     /**
-     * 将字符串转位日期类型
+     * 将字符串转为 "yyyy-MM-dd HH:mm:ss" 格式的日期类型
      *
      * @param sdate
      * @return
      */
     public static Date toDate(String sdate) {
-        try {
-            SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            return dateFormater.parse(sdate);
-        } catch (Exception e) {
-            return null;
-        }
+        return toDate(sdate, "yyyy-MM-dd HH:mm:ss");
     }
 
     /**
@@ -87,68 +82,6 @@ public class TimeUtil {
             SimpleDateFormat dateFormater = new SimpleDateFormat(pattern);
             return dateFormater.parse(sdate);
         } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static Date toDate2(String sdate) {
-        try {
-            SimpleDateFormat dateFormater2 = new SimpleDateFormat("yyyy-MM-dd");
-            return dateFormater2.parse(sdate);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static Date toDate3(String sdate) {
-        try {
-            SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-            return dateFormater.parse(sdate);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static Date toDate5(String sdate) {
-        try {
-            SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy年MM月dd日HH点");
-            return dateFormater.parse(sdate);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-
-    public static Date toDate6(String sdate) {
-        try {
-            SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy年M月");
-            return dateFormater.parse(sdate);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static Date toDate7(String sdate, String format) {
-        try {
-            SimpleDateFormat dateFormater = new SimpleDateFormat(format);
-            return dateFormater.parse(sdate);
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    /**
-     * 根据pattern格式构建时间
-     *
-     * @param dateStrig
-     * @param pattern
-     * @return
-     */
-    public static Date getDate(String dateStrig, String pattern) {
-        DateFormat df = new SimpleDateFormat(pattern);
-        try {
-            return df.parse(dateStrig);
-        } catch (ParseException e) {
             return null;
         }
     }
@@ -172,7 +105,7 @@ public class TimeUtil {
     /**
      * @param date
      * @return
-     * @description 以友好的时间显示
+     * @description 以过去式的时间显示
      */
     public static String format(Date date) {
         long delta = getNowUnixTimeInMillis() - date.getTime();
@@ -229,24 +162,7 @@ public class TimeUtil {
     }
 
     /**
-     * 以友好的方式显示时间
-     *
-     * @param sdate
-     * @return
-     */
-    public static String friendlyTime(String sdate) {
-        Date time = null;
-        if (sdate != null && sdate.contains(":")) {
-            time = toDate(sdate);
-        } else {
-            time = toDate2(sdate);
-        }
-        String ftime = format(time);
-        return ftime;
-    }
-
-    /**
-     * 格式化时间
+     * 格式化时间，只获取最后的 分：秒
      *
      * @param ms
      * @return
@@ -270,27 +186,6 @@ public class TimeUtil {
         String strMilliSecond = milliSecond < 10 ? "0" + milliSecond : "" + milliSecond;
         strMilliSecond = milliSecond < 100 ? "0" + strMilliSecond : "" + strMilliSecond;
         return strMinute + ":" + strSecond;
-    }
-
-    /**
-     * 判断给定字符串时间是否为今日
-     *
-     * @param sdate
-     * @return boolean
-     */
-    public static boolean isToday(String sdate) {
-        boolean b = false;
-        Date time = toDate(sdate);
-        Date today = new Date();
-        if (time != null) {
-            SimpleDateFormat dateFormater2 = new SimpleDateFormat("yyyy-MM-dd");
-            String nowDate = dateFormater2.format(today);
-            String timeDate = dateFormater2.format(time);
-            if (nowDate.equals(timeDate)) {
-                b = true;
-            }
-        }
-        return b;
     }
 
     /**
@@ -336,20 +231,6 @@ public class TimeUtil {
     }
 
     /**
-     * 比较两个日期时间的大小 到秒为止
-     *
-     * @param startDateStr
-     * @param endDateStr
-     * @return 【<0表示startDateStr小于endDateStr，
-     * 0表相等，大于0表示startDateStr大于endDateStr】
-     */
-    public static int compareDate(String startDateStr, String endDateStr) {
-        Date startDate = toDate(startDateStr);
-        Date endDate = toDate(endDateStr);
-        return compareDate(startDate, endDate);
-    }
-
-    /**
      * 比较两个日期时间的大小
      *
      * @param startDateStr
@@ -360,34 +241,6 @@ public class TimeUtil {
     public static int compareDate(String startDateStr, String endDateStr, String pattern) {
         Date startDate = toDate(startDateStr, pattern);
         Date endDate = toDate(endDateStr, pattern);
-        return compareDate(startDate, endDate);
-    }
-
-    /**
-     * 比较两个日期时间的大小 到分为止
-     *
-     * @param startDateStr
-     * @param endDateStr
-     * @return 【<0表示startDateStr小于endDateStr，
-     * 0表相等，大于0表示startDateStr大于endDateStr】
-     */
-    public static int compareDate2(String startDateStr, String endDateStr) {
-        Date startDate = toDate3(startDateStr);
-        Date endDate = toDate3(endDateStr);
-        return compareDate(startDate, endDate);
-    }
-
-    /**
-     * 比较两个日期时间的大小
-     *
-     * @param startDateStr
-     * @param endDateStr
-     * @return 【<0表示startDateStr小于endDateStr，
-     * 0表相等，大于0表示startDateStr大于endDateStr】
-     */
-    public static int compareDate3(String startDateStr, String endDateStr) {
-        Date startDate = toDate2(startDateStr);
-        Date endDate = toDate2(endDateStr);
         return compareDate(startDate, endDate);
     }
 
@@ -475,7 +328,6 @@ public class TimeUtil {
      *
      * @param time
      * @return
-     * @date 2016年6月23日
      */
     public static String[] getWeekArray(String time) {
         String[] result = new String[2];
@@ -523,6 +375,19 @@ public class TimeUtil {
     }
 
     /**
+     * 判断给定字符串时间是否为今日
+     *
+     * @param sdate
+     * @return boolean
+     */
+    public static boolean isToday(String sdate) {
+        boolean b = false;
+        Date time = toDate(sdate);
+        Date today = new Date();
+        return isInOneDay(time, today);
+    }
+
+    /**
      * 判断两个时间是否在同一天
      *
      * @param date1
@@ -567,40 +432,6 @@ public class TimeUtil {
         } catch (Exception e) {
         }
         return result;
-    }
-
-    /**
-     * @param dateStr (显示格式为：秒、分、时、天前或者为yy.MM.dd(如15.12.15)<目前主要用于学趣任务列表时间显示>)
-     * @return
-     */
-    public static String toDate4(String dateStr) {
-        Date time = null;
-        if (dateStr != null && dateStr.contains(":")) {
-            time = toDate(dateStr);
-        } else {
-            time = toDate2(dateStr);
-        }
-        if (time == null) {
-            return "Unknown";
-        }
-        String ftime = "";
-        Calendar cal = Calendar.getInstance();
-        long lt = time.getTime() / 86400000;
-        long ct = cal.getTimeInMillis() / 86400000;
-        int days = (int) Math.abs((ct - lt));
-        if (days <= 0) {
-            int hour = (int) ((cal.getTimeInMillis() - time.getTime()) / 3600000);
-            if (hour <= 0) {
-                ftime = Math.max((cal.getTimeInMillis() - time.getTime()) / 60000, 1) + "分钟前";
-            } else {
-                ftime = hour + "小时前";
-            }
-        } else if (days > 0 && days <= 3) {
-            ftime = days + "天前";
-        } else if (days > 3) {
-            ftime = getDateFormat(time, "yyyy年MM月dd日");
-        }
-        return ftime;
     }
 
     /**
@@ -718,39 +549,6 @@ public class TimeUtil {
         calendar.setTime(date);
         calendar.add(Calendar.MONTH, monthAmount);
         return calendar.getTime();
-    }
-
-    /**
-     * yyyy-MM-dd格式字符串转换成时间戳
-     *
-     * @param user_time
-     * @return
-     */
-    public static String getTime(String user_time) {
-        String re_time = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date d;
-        try {
-            d = sdf.parse(user_time);
-            long l = d.getTime();
-            String str = String.valueOf(l);
-            re_time = str.substring(0, 10);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return re_time;
-    }
-
-    /**
-     * 获取当前月第一天（如2020-12-01）
-     *
-     * @return
-     */
-    public static String getCurrentEarly2() {
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH) + 1;
-        return year + "-" + month + "-" + "01";
     }
 
     /**
@@ -875,32 +673,6 @@ public class TimeUtil {
         Long timestamp = Long.parseLong(timeStampString) * 1000;
         String date = new SimpleDateFormat(formats, Locale.CHINA).format(new Date(timestamp));
         return date;
-    }
-
-    /**
-     * 功能描述：返回月
-     *
-     * @param date
-     *            Date 日期
-     * @return 返回月份
-     */
-    public static int getMonth(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        return calendar.get(Calendar.MONTH) + 1;
-    }
-
-    /**
-     * 功能描述：返回日期
-     *
-     * @param date
-     *            Date 日期
-     * @return 返回日份
-     */
-    public static int getDay(Date date) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        return calendar.get(Calendar.DAY_OF_MONTH);
     }
 
 }

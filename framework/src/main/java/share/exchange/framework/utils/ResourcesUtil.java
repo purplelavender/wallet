@@ -17,6 +17,13 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.view.View;
 
+/**
+ *
+ * @ClassName:      ResourcesUtil
+ * @Description:    资源文件处理工具，后续有需要在添加
+ * @Author:         ZL
+ * @CreateDate:     2019/08/14 09:46
+ */
 @SuppressWarnings("deprecation")
 public class ResourcesUtil {
 
@@ -47,7 +54,12 @@ public class ResourcesUtil {
         return ResourcesCompat.getColorStateList(context.getResources(), id, theme);
     }
 
-
+    /**
+     * 获取drawable
+     * @param context
+     * @param drawableResId
+     * @return
+     */
     public static Drawable getDrawable(@NonNull Context context, @DrawableRes int drawableResId) {
         return ContextCompat.getDrawable(context, drawableResId);
     }

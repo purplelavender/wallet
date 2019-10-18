@@ -6,6 +6,7 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -13,12 +14,13 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
@@ -33,7 +35,6 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,20 +42,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
-import java.util.UUID;
+
+import share.exchange.framework.widget.CommonToast;
 
 @SuppressLint("MissingPermission")
 public class EnvironmentUtil {
-
-    private EnvironmentUtil() {
-    }
 
     /**
      * 获取手机内存信息
      *
      * @param context
      * @return
-     * @author wragony
      */
     public static String getTotalMemory(final Context context) {
         String str1 = "/proc/meminfo";// 系统内存信息文件
@@ -79,7 +77,6 @@ public class EnvironmentUtil {
      *
      * @param mContext
      * @return
-     * @author wragony
      */
     public static long getAvailMemory(Context mContext) {
         ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
@@ -185,16 +182,11 @@ public class EnvironmentUtil {
         return (int) (spValue * fontScale + 0.5f);
     }
 
-    public static float dp2px(Resources resources, float dp) {
-        final float scale = resources.getDisplayMetrics().density;
-        return dp * scale + 0.5f;
-    }
-
-    public static float sp2px(Resources resources, float sp) {
-        final float scale = resources.getDisplayMetrics().scaledDensity;
-        return sp * scale;
-    }
-
+    /**
+     * 获取屏幕大小
+     * @param context
+     * @return
+     */
     @SuppressLint("NewApi")
     public static Point getScreenSize(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -215,7 +207,6 @@ public class EnvironmentUtil {
      *
      * @param context
      * @return
-     * @author wragony
      */
     public static int screenWidth(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
@@ -234,7 +225,6 @@ public class EnvironmentUtil {
      *
      * @param context
      * @return
-     * @author wragony
      */
     public static int screenWidthPer(Context context, float per) {
         return (int) (context.getResources().getDisplayMetrics().widthPixels * per);
@@ -245,7 +235,6 @@ public class EnvironmentUtil {
      *
      * @param context
      * @return
-     * @author wragony
      */
     public static int screenHeight(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
@@ -264,22 +253,11 @@ public class EnvironmentUtil {
      *
      * @param context
      * @return
-     * @author wragony
      */
     public static int screenHeightPer(Context context, float per) {
         return (int) (context.getResources().getDisplayMetrics().heightPixels * per);
     }
 
-    /**
-     * 按比例获取屏幕高度
-     *
-     * @param context
-     * @param px
-     * @return
-     */
-    public static int getHeightPx(Activity context, int px) {
-        return px * screenHeight(context) / 1136; // 1136为设计图设定的（640宽）
-    }
 
     /**
      * 获取控件的高度，如果获取的高度为0，则重新计算尺寸后再返回高度
@@ -326,7 +304,6 @@ public class EnvironmentUtil {
      *
      * @param context
      * @return
-     * @author 李平
      */
     public static String getPackageName(Context context) {
         PackageInfo info = getPackageInfo(context);
@@ -335,11 +312,10 @@ public class EnvironmentUtil {
     }
 
     /**
-     * 得到App版本
+     * 得到App版本名
      *
      * @param context
      * @return
-     * @author wragony
      */
     public static String getVersionName(Context context) {
         String result = null;
@@ -349,11 +325,10 @@ public class EnvironmentUtil {
     }
 
     /**
-     * 得到App版本
+     * 得到App版本号
      *
      * @param context
      * @return
-     * @author wragony
      */
     public static int getVersionCode(Context context) {
         PackageInfo pInfo = getPackageInfo(context);
@@ -383,8 +358,6 @@ public class EnvironmentUtil {
 
     /**
      * 安装apk
-     *
-     * @author wragony
      */
     public static void installApk(Context mContext, String apkFilePath) {
         File file = new File(apkFilePath);
@@ -431,7 +404,6 @@ public class EnvironmentUtil {
      * @param mContext
      * @param packageName
      * @return
-     * @author wragony
      */
     public static boolean isApkInstalled(Context mContext, String packageName) {
         try {
@@ -454,150 +426,15 @@ public class EnvironmentUtil {
      *
      * @param mContext
      * @param packageName
-     * @author wragony
      */
     public static void launchApp(Context mContext, String packageName) {
-        // 获取目标应用安装包的Intent
-        Intent intent = mContext.getPackageManager().getLaunchIntentForPackage(packageName);
-        mContext.startActivity(intent);
-    }
-
-    /**
-     * 获取手机号码
-     *
-     * @param c
-     * @return
-     * @author wragony
-     */
-    public static String getTELNO(Context c) {
-        TelephonyManager tm = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        String tel = tm.getLine1Number();
-        if (null != tel && !"".equals(tel)) {
-            if (tel.startsWith("+86")) {
-                tel = tel.replace("+86", "").trim();
-            } else if (tel.startsWith("+")) {
-                tel = tel.replace("+", "").trim();
-            }
+        if (isApkInstalled(mContext, packageName)) {
+            // 获取目标应用安装包的Intent
+            Intent intent = mContext.getPackageManager().getLaunchIntentForPackage(packageName);
+            mContext.startActivity(intent);
+        } else {
+            CommonToast.showToast(mContext, CommonToast.ToastType.WARNING, "设备上没有安装该应用");
         }
-        return tel;
-    }
-
-    /**
-     * Return pseudo unique ID
-     *
-     * @return ID
-     */
-    public static String getUniquePsuedoID() {
-        // If all else fails, if the user does have lower than API 9 (lower
-        // than Gingerbread), has reset their device or 'Secure.ANDROID_ID'
-        // returns 'null', then simply the ID returned will be solely based
-        // off their Android device information. This is where the collisions
-        // can happen.
-        // Thanks http://www.pocketmagic.net/?p=1662!
-        // Try not to use DISPLAY, HOST or ID - these items could change.
-        // If there are collisions, there will be overlapping data
-        String m_szDevIDShort = "35" + (Build.BOARD.length() % 10) + (Build.BRAND.length() % 10) + (Build.CPU_ABI.length() % 10) + (Build.DEVICE.length() % 10) + (Build.MANUFACTURER.length() % 10) + (
-                Build.MODEL.length() % 10) + (Build.PRODUCT.length() % 10);
-
-        // Thanks to @Roman SL!
-        // http://stackoverflow.com/a/4789483/950427
-        // Only devices with API >= 9 have android.os.Build.SERIAL
-        // http://developer.android.com/reference/android/os/Build.html#SERIAL
-        // If a user upgrades software or roots their device, there will be a duplicate entry
-        String serial = null;
-        try {
-            serial = android.os.Build.class.getField("SERIAL").get(null).toString();
-
-            // Go ahead and return the serial for api => 9
-            return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
-        } catch (Exception exception) {
-            // String needs to be initialized
-            serial = "serial"; // some value
-        }
-
-        // Thanks @Joe!
-        // http://stackoverflow.com/a/2853253/950427
-        // Finally, combine the values we have found by using the UUID class to create a unique identifier
-        return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
-    }
-
-    /**
-     * 获取设备DEVICEID
-     *
-     * @param c
-     * @return
-     * @author wragony
-     */
-    @Deprecated
-    public static String getDEVICEID(Context c) {
-        String deviceid = "";
-        try {
-            TelephonyManager tm = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-            deviceid = tm.getDeviceId();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return deviceid;
-    }
-
-    /**
-     * 获取设备IMEI
-     *
-     * @param c
-     * @return
-     * @author wragony
-     */
-    public static String getIMEI(Context c) {
-        TelephonyManager tm = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        String imei = tm.getSimSerialNumber();
-        return imei;
-    }
-
-    /**
-     * 获取设备IMSI
-     *
-     * @param c
-     * @return
-     * @author wragony
-     */
-    public static String getIMSI(Context c) {
-        TelephonyManager tm = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        String imsi = tm.getSubscriberId();
-        return imsi;
-    }
-
-    /**
-     * 获取设备SUBSCRIBERID
-     *
-     * @param c
-     * @return
-     * @author wragony
-     */
-    public static String getSUBSCRIBERID(Context c) {
-        TelephonyManager phoneMgr = (TelephonyManager) c.getSystemService(Context.TELEPHONY_SERVICE);
-        String subscriberId = phoneMgr.getSubscriberId();
-        return subscriberId;
-    }
-
-    /**
-     * 得到App版本
-     *
-     * @param c
-     * @param packageName
-     * @return
-     * @author wragony
-     */
-    public static String getAppVersion(Context c, String packageName) {
-        String result = null;
-        PackageInfo pInfo = null;
-        try {
-            pInfo = c.getPackageManager().getPackageInfo(packageName, PackageManager.GET_CONFIGURATIONS);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-            return result;
-        }
-        result = pInfo.versionName;
-        return result;
     }
 
     /**
@@ -656,8 +493,67 @@ public class EnvironmentUtil {
         return false;
     }
 
+    /****
+     * 获取网络类型
+     *
+     * @param context
+     * @return
+     */
+    public static String getNetType(Context context) {
+        try {
+            ConnectivityManager connectMgr = (ConnectivityManager) context
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo info = connectMgr.getActiveNetworkInfo();
+            if (info == null) {
+                return "";
+            }
+            if (info.getType() == ConnectivityManager.TYPE_WIFI) {
+                return "WIFI";
+            } else if (info.getType() == ConnectivityManager.TYPE_MOBILE) {
+                if (info.getSubtype() == TelephonyManager.NETWORK_TYPE_CDMA) {
+                    return "CDMA";
+                } else if (info.getSubtype() == TelephonyManager.NETWORK_TYPE_EDGE) {
+                    return "EDGE";
+                } else if (info.getSubtype() == TelephonyManager.NETWORK_TYPE_EVDO_0) {
+                    return "EVDO0";
+                } else if (info.getSubtype() == TelephonyManager.NETWORK_TYPE_EVDO_A) {
+                    return "EVDOA";
+                } else if (info.getSubtype() == TelephonyManager.NETWORK_TYPE_GPRS) {
+                    return "GPRS";
+                }
+                /*
+                 * else if(info.getSubtype() ==
+                 * TelephonyManager.NETWORK_TYPE_HSDPA){ return "HSDPA"; }else
+                 * if(info.getSubtype() == TelephonyManager.NETWORK_TYPE_HSPA){
+                 * return "HSPA"; }else if(info.getSubtype() ==
+                 * TelephonyManager.NETWORK_TYPE_HSUPA){ return "HSUPA"; }
+                 */
+                else if (info.getSubtype() == TelephonyManager.NETWORK_TYPE_UMTS) {
+                    return "UMTS";
+                } else {
+                    return "3G";
+                }
+            } else {
+                return "";
+            }
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
     /**
-     * 打开浏览器
+     * 获取 MAC 地址 <uses-permission
+     * android:name="android.permission.ACCESS_WIFI_STATE"/>
+     */
+    public static String getMacAddress(Context context) {
+        // wifi mac地址
+        WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        WifiInfo info = wifi.getConnectionInfo();
+        return info.getMacAddress();
+    }
+
+    /**
+     * 打开外部浏览器
      *
      * @param context
      * @param url
@@ -693,6 +589,7 @@ public class EnvironmentUtil {
 
     /**
      * add process name cache
+     * 获取当前进程的名称
      *
      * @param context
      * @return
@@ -705,6 +602,11 @@ public class EnvironmentUtil {
         return processName;
     }
 
+    /**
+     * 获取当前进程的名称
+     * @param context
+     * @return
+     */
     private static String getProcessNameInternal(final Context context) {
         int myPid = android.os.Process.myPid();
         if (context == null || myPid <= 0) {
@@ -758,7 +660,6 @@ public class EnvironmentUtil {
      * @param mContext
      * @param className 判断的服务名字
      * @return true 在运行 false 不在运行
-     * @author wragony
      */
 
     public static boolean isServiceRunning(Context mContext, String className) {
@@ -803,7 +704,6 @@ public class EnvironmentUtil {
      * @param serviceClazz Service类
      * @return
      * @description 停止Service
-     * @author wragony
      */
     public static boolean stopService(Context context, Class serviceClazz) {
         Intent intent = new Intent(context, serviceClazz);
@@ -843,7 +743,6 @@ public class EnvironmentUtil {
      *
      * @param cx
      * @return
-     * @author wragony
      */
     public static boolean hasShortcut(Context cx) {
         boolean result = false;
@@ -879,7 +778,8 @@ public class EnvironmentUtil {
 
             public void run() {
                 if (null != activity && !activity.isFinishing() && null != mEditText) {
-                    ((InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE)).showSoftInput(mEditText, InputMethodManager.SHOW_IMPLICIT);
+                    ((InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE)).showSoftInput(mEditText, InputMethodManager
+                            .SHOW_IMPLICIT);
                 }
             }
         }, 100);
@@ -919,7 +819,6 @@ public class EnvironmentUtil {
      *
      * @param smsBody
      */
-
     public static void sendSMS(Context mContext, String receiver, String smsBody) {
         Uri smsToUri = Uri.parse("smsto:" + receiver);
         Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
@@ -932,7 +831,6 @@ public class EnvironmentUtil {
      *
      * @param mActivity
      * @param phoneNumber
-     * @author wragony
      */
     public static void phoneCall(Activity mActivity, String phoneNumber) {
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber));
@@ -960,7 +858,6 @@ public class EnvironmentUtil {
      *
      * @param context
      * @return
-     * @author 李平
      */
     public static String pasteContent(Context context) {
         // 得到剪贴板管理器
@@ -995,13 +892,9 @@ public class EnvironmentUtil {
      */
     public static boolean checkNotificationPermission(Context context) {
         boolean enabled;
-//        if (AndroidSdkUtil.hasKitkat()) {
-//            enabled = NotificationManagerCompat.from(context).areNotificationsEnabled();
-//        } else {
         String pkg = context.getPackageName();
         String flat = Settings.Secure.getString(context.getContentResolver(), "enabled_notification_listeners");
         enabled = flat != null && flat.contains(pkg);
-//        }
         return enabled;
     }
 
@@ -1038,6 +931,42 @@ public class EnvironmentUtil {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * whether application is in background
+     * <ul>
+     * <li>need use permission android.permission.GET_TASKS in Manifest.xml</li>
+     * </ul>
+     *
+     * @param context
+     * @return if application is in background return true, otherwise return false
+     */
+    public static boolean isApplicationInBackground(Context context) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> taskList = am.getRunningTasks(1);
+        if (taskList != null && !taskList.isEmpty()) {
+            ComponentName topActivity = taskList.get(0).topActivity;
+            if (topActivity != null && !topActivity.getPackageName().equals(context.getPackageName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 调用系统安装了的应用分享
+     *
+     * @param context
+     * @param title
+     * @param url
+     */
+    public static void showSystemShareOption(Activity context, final String title, final String url) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "分享：" + title);
+        intent.putExtra(Intent.EXTRA_TEXT, url);
+        context.startActivity(Intent.createChooser(intent, "选择分享"));
     }
 
 }

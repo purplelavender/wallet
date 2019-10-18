@@ -3,7 +3,7 @@ package share.exchange.framework.base;
 import java.lang.ref.WeakReference;
 
 import share.exchange.framework.executor.AsyncExecutor;
-import share.exchange.framework.http.OkDroid;
+import share.exchange.framework.manager.ApiManager;
 
 /**
  *
@@ -20,6 +20,7 @@ public abstract class BasePresenter<V extends BaseMVP.MvpView> implements BaseMV
     protected WeakReference<V> mViewRef; // view 的弱引用 当内存不足释放内存
 
     protected AsyncExecutor executor;
+    protected ApiManager apiManager;
 
     public BasePresenter() {
         executor = new AsyncExecutor();
@@ -32,6 +33,7 @@ public abstract class BasePresenter<V extends BaseMVP.MvpView> implements BaseMV
             throw new IllegalArgumentException("View cannot be null");
         }
         executor = new AsyncExecutor();
+        apiManager = ApiManager.getInstance();
     }
 
     @Override
@@ -40,7 +42,7 @@ public abstract class BasePresenter<V extends BaseMVP.MvpView> implements BaseMV
             mViewRef.clear();
             mViewRef = null;
         }
-        OkDroid.getInstance().cancel(TAG);
+        apiManager.cancel(TAG);
     }
 
     public V getView() {

@@ -41,31 +41,31 @@ public class CommonToast {
                 /**
                  * 成功提示
                  */
-                showCustom(context, StyledToast.EMPHASIZE, R.drawable.common_ic_success_white, message);
+                showCustom(context, StyledToast.EMPHASIZE, R.drawable.ic_success_white, message);
                 break;
             case SUCCESS2:
                 /**
                  * 成功提示
                  */
-                showCustomNew(context, StyledToast.UNIVERSAL, R.drawable.common_toast_success_bg, R.drawable.common_icon_success, message);
+                showCustomNew(context, StyledToast.UNIVERSAL, R.drawable.toast_success_bg, R.drawable.icon_success, message);
                 break;
             case ERROR:
                 /**
                  * 错误提示
                  */
-                showCustom(context, StyledToast.EMPHASIZE, R.drawable.common_ic_clear_white_24dp, message);
+                showCustom(context, StyledToast.EMPHASIZE, R.drawable.ic_clear_white, message);
                 break;
             case ERROR2:
                 /**
                  * 错误提示
                  */
-                showCustomNew(context, StyledToast.UNIVERSAL, R.drawable.common_toast_warn_bg, R.drawable.common_icon_warn, message);
+                showCustomNew(context, StyledToast.UNIVERSAL, R.drawable.toast_warn_bg, R.drawable.icon_warn, message);
                 break;
             case WARNING:
                 /**
                  * 一般信息提示
                  */
-                showCustom(context, StyledToast.EMPHASIZE, R.drawable.common_ic_error_white, message);
+                showCustom(context, StyledToast.EMPHASIZE, R.drawable.ic_error_white, message);
                 break;
             default:
                 break;

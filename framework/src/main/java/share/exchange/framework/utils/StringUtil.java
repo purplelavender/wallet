@@ -3,22 +3,14 @@ package share.exchange.framework.utils;
 import android.annotation.SuppressLint;
 import android.util.Log;
 
-import com.alibaba.fastjson.JSONArray;
-
 import java.math.BigDecimal;
-import java.net.URLEncoder;
 import java.security.MessageDigest;
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,10 +31,37 @@ public class StringUtil {
     }
 
     /**
+     * 判断是否为"0"
+     * @param value
+     * @return
+     */
+    public static boolean isZero(String value) {
+        return isEmpty(value) || isEqual(value, ".") || Double.parseDouble(value) == 0;
+    }
+
+    /**
+     * 判断字符串是否为空
+     * @param value
+     * @param value2
+     * @return
+     */
+    public static boolean isEqual(String value, String value2) {
+        return (value != null && value.equals(value2)) || (value == null && value2 == null);
+    }
+
+    /**
+     * 判断是否包含
+     * @param value
+     * @param value2
+     * @return
+     */
+    public static boolean isContain(String value, String value2) {
+        return value != null && value.contains(value2);
+    }
+
+    /**
      * 判断给定字符串是否空白串。 空白串是指由空格、制表符、回车符、换行符组成的字符串 若输入字符串为null或空字符串，返回true
-     *
      * @param input
-     *
      * @return boolean
      */
     public static boolean isEmpty(String input) {
@@ -59,12 +78,8 @@ public class StringUtil {
 
     /**
      * 判断数组是否
-     *
      * @param paramArrayOfObject
-     *
      * @return
-     *
-     * @author yangxd
      */
     public static boolean isEmpty(Object[] paramArrayOfObject) {
         return (paramArrayOfObject == null) || (paramArrayOfObject.length == 0) || ((paramArrayOfObject.length == 1) && (paramArrayOfObject[ 0 ] == null));
@@ -72,12 +87,8 @@ public class StringUtil {
 
     /**
      * 判断是否为空
-     *
      * @param paramCollection
-     *
      * @return
-     *
-     * @author yangxd
      */
     public static <T> boolean isEmpty(Collection<T> paramCollection) {
         return (paramCollection == null) || (paramCollection.isEmpty());
@@ -85,12 +96,8 @@ public class StringUtil {
 
     /**
      * 验证联系电话【手机号码或者座机】
-     *
      * @param phone 手机号码或者座机
-     *
      * @return
-     *
-     * @author wragony
      */
     public static boolean checkPhone(String phone) {
         if (phone.matches("\\d{4}-\\d{8}|\\d{4}-\\d{7}|\\d(3)-\\d(8)")) {
@@ -100,12 +107,8 @@ public class StringUtil {
 
     /**
      * 是否是手机号码
-     *
      * @param mobile
-     *
      * @return
-     *
-     * @author wragony
      */
     public static boolean isMobile(String mobile) {
         return mobile.matches("^[1][1,2,3,4,5,6,7,8,9]+\\d{9}");
@@ -113,9 +116,7 @@ public class StringUtil {
 
     /**
      * 判断是不是一个合法的电子邮件地址
-     *
      * @param email
-     *
      * @return
      */
     @SuppressLint("DefaultLocale")
@@ -133,12 +134,8 @@ public class StringUtil {
 
     /**
      * 是否是有效的密码[可以是纯数字，也可以是纯字母，也可以是数字+字母,6-16 位]
-     *
      * @param password
-     *
      * @return
-     *
-     * @author wragony
      */
     public static boolean isPasswordValid(String password) {
         return Pattern.matches("^[0-9a-zA-Z]{6,20}", password);
@@ -146,9 +143,7 @@ public class StringUtil {
 
     /**
      * 判断密码是否符合规定，只支持数字+字母的6~20位字符
-     *
      * @param password
-     *
      * @return
      */
     public static boolean isPasswordWake(String password) {
@@ -157,9 +152,7 @@ public class StringUtil {
 
     /**
      * 取得字符串的实际长度（考虑了汉字的情况）
-     *
      * @param srcStr 源字符串
-     *
      * @return 字符串的实际长度
      */
     public static int getStringLen(String srcStr) {
@@ -175,10 +168,8 @@ public class StringUtil {
 
     /**
      * 字符串转整数
-     *
      * @param str
      * @param defValue
-     *
      * @return
      */
     public static int toInt(String str, int defValue) {
@@ -191,9 +182,7 @@ public class StringUtil {
 
     /**
      * 对象转整数
-     *
      * @param obj
-     *
      * @return 转换异常返回 0
      */
     public static int toInt(Object obj) {
@@ -204,9 +193,7 @@ public class StringUtil {
 
     /**
      * 对象转整数
-     *
      * @param obj
-     *
      * @return 转换异常返回 0
      */
     public static long toLong(String obj) {
@@ -219,9 +206,7 @@ public class StringUtil {
 
     /**
      * 字符串转布尔值
-     *
      * @param b
-     *
      * @return 转换异常返回 false
      */
     public static boolean toBool(String b) {
@@ -233,38 +218,9 @@ public class StringUtil {
     }
 
     /**
-     * 组装 http url
-     *
-     * @param p_url
-     * @param params
-     *
-     * @return
-     *
-     * @author wragony
-     */
-    @SuppressWarnings(
-            { "unused", "deprecation" })
-    private static String makeURL(String p_url, Map<String, Object> params) {
-        StringBuilder url = new StringBuilder(p_url);
-        if (url.indexOf("?") < 0)
-            url.append('?');
-        for (String name : params.keySet()) {
-            url.append('&');
-            url.append(URLEncoder.encode(name));
-            url.append('=');
-            url.append(URLEncoder.encode(String.valueOf(params.get(name))));
-        }
-        return url.toString().replace("?&", "?");
-    }
-
-    /**
      * MD5加密
-     *
      * @param password
-     *
      * @return
-     *
-     * @auther
      */
     public static String encrypt(String password) {
         String result = null;
@@ -285,12 +241,8 @@ public class StringUtil {
 
     /**
      * 加密调用的方法
-     *
      * @param b 字符
-     *
      * @return
-     *
-     * @auther
      */
     @SuppressLint("DefaultLocale")
     private static String byte2hex(byte[] b) {
@@ -310,9 +262,7 @@ public class StringUtil {
      * byteArr转hexString
      * <p>例如：</p>
      * bytes2HexString(new byte[] { 0, (byte) 0xa8 }) returns 00A8
-     *
      * @param bytes 字节数组
-     *
      * @return 16进制大写字符串
      */
     public static String bytes2HexString(final byte[] bytes) {
@@ -329,12 +279,8 @@ public class StringUtil {
 
     /**
      * 去除字符串中转义符。
-     *
      * @param str
-     *
      * @return
-     *
-     * @author yh
      */
     public static String replaceBlank(String str) {
         String dest = "";
@@ -347,65 +293,9 @@ public class StringUtil {
     }
 
     /**
-     * 解析类似： "[\"www.baidu.com\",\"www.xinlang.com\",\"www.xinlang.com\"]";
-     *
-     * @param jsonStr
-     *
-     * @return
-     *
-     * @author wragony
-     */
-    public static String[] parseStringArray(String jsonStr) {
-        StringBuilder sb = new StringBuilder();
-        try {
-            List<String> strings = JSONArray.parseArray(jsonStr, String.class);
-            if (null != strings && strings.size() > 0) {
-                String result = "";
-                for (String string : strings) {
-                    sb.append(string).append(",");
-                }
-                if (sb.toString().endsWith(",")) {
-                    result = sb.toString().substring(0, sb.toString().length() - 1);
-                }
-                return result.split(",");
-            }
-        } catch (Exception e) {
-        }
-        return null;
-    }
-
-    /**
-     * 解析类似： "[0,1,2,3]";
-     *
-     * @param jsonStr
-     *
-     * @return
-     *
-     * @author wragony
-     */
-    public static Integer[] parseIntArray(String jsonStr) {
-        Integer[] results = null;
-        try {
-            List<Integer> strings = JSONArray.parseArray(jsonStr, Integer.class);
-            if (null != strings && strings.size() > 0) {
-                results = new Integer[ strings.size() ];
-                for (int i = 0; i < strings.size(); i++) {
-                    results[ i ] = strings.get(i);
-                }
-            }
-        } catch (Exception e) {
-        }
-        return results;
-    }
-
-    /**
      * 是否是数字
-     *
      * @param str
-     *
      * @return
-     *
-     * @author wragony
      */
     public static boolean isDigtal(String str) {
         Pattern pattern = Pattern.compile("[0-9]*");
@@ -415,12 +305,8 @@ public class StringUtil {
 
     /**
      * 是否是数字[正数、负数、和小数]
-     *
      * @param str
-     *
      * @return
-     *
-     * @author wragony
      */
     public static boolean isNumber2(String str) {
         Pattern pattern = Pattern.compile("^(\\-|\\+)?\\d+(\\.\\d+)?$");
@@ -430,12 +316,8 @@ public class StringUtil {
 
     /**
      * 是否是数字［］
-     *
      * @param str
-     *
      * @return
-     *
-     * @author wragony
      */
     public static boolean isNumber(String str) {
         Pattern pattern = Pattern.compile("-?[1-9][0-9]*");
@@ -445,9 +327,7 @@ public class StringUtil {
 
     /**
      * 计算分享内容的字数，一个汉字=两个英文字母，一个中文标点=两个英文标点 注意：该函数的不适用于对单个字符进行计算，因为单个字符四舍五入后都是1
-     *
      * @param c
-     *
      * @return
      */
     public static long calculateLength(CharSequence c) {
@@ -465,11 +345,8 @@ public class StringUtil {
 
     /**
      * @param src 源字符串
-     *
      * @return 结果
-     *
      * @description 去掉字符串最后一个字符
-     * @author wragony
      */
     public static String removeLast(String src) {
         String result = src;
@@ -481,11 +358,8 @@ public class StringUtil {
 
     /**
      * @param content 源字符串
-     *
      * @return 截取后的数字
-     *
      * @description 截取字符串中的数字
-     * @author wragony
      */
     public static String getNumbersOfString(String content) {
         Pattern pattern = Pattern.compile("\\d+");
@@ -498,11 +372,8 @@ public class StringUtil {
 
     /**
      * @param url
-     *
      * @return
-     *
      * @description 是否是网络地址
-     * @author wragony
      */
     public static boolean isHttpAddr(String url) {
         try {
@@ -520,9 +391,7 @@ public class StringUtil {
 
     /**
      * 从一段文字中，获取完整的url地址
-     *
      * @param text 待查找的文本
-     *
      * @return 多个匹配到的结果, null 表示一个也没匹配到
      */
     public static String[] getCompleteUrl(String text) {
@@ -547,14 +416,9 @@ public class StringUtil {
 
     /**
      * 四舍五入取整
-     *
      * @param sourceNumber
-     *
      * @return
-     *
-     * @author wragony
      */
-
     public static int roundingNumber(String sourceNumber) {
         BigDecimal bigDecimal = new BigDecimal(sourceNumber).setScale(0, BigDecimal.ROUND_HALF_UP);
         return bigDecimal.intValue();
@@ -564,11 +428,8 @@ public class StringUtil {
      * @param sourceNumber
      * @param newScale
      * @param roundingMode
-     *
      * @return
-     *
      * @description 浮点数小数点处理
-     * @author wragony
      */
     public static BigDecimal formatNumber(String sourceNumber, int newScale, int roundingMode) {
         BigDecimal bigDecimal = new BigDecimal(sourceNumber).setScale(newScale, roundingMode);
@@ -577,11 +438,8 @@ public class StringUtil {
 
     /**
      * @param s
-     *
      * @return
-     *
      * @description 使用正则表达式去掉多余的.与0
-     * @author wragony
      */
     public static String subZeroAndDot(String s) {
         if (s.indexOf(".") > 0) {
@@ -593,12 +451,8 @@ public class StringUtil {
 
     /**
      * List 去重复
-     *
      * @param dataList
-     *
      * @return
-     *
-     * @author wragony
      */
     @SuppressWarnings(
             { "rawtypes", "unchecked" })
@@ -609,75 +463,47 @@ public class StringUtil {
         return dataList;
     }
 
-    @SuppressWarnings(
-            { "rawtypes", "unchecked" })
-    public static List removeDuplicate2(List dataList) {
-        Set set = new HashSet();
-        List newList = new ArrayList();
-        for (Object element : dataList) {
-            if (set.add(element))
-                newList.add(element);
-        }
-        return newList;
-    }
+//    @SuppressWarnings(
+//            { "rawtypes", "unchecked" })
+//    public static List removeDuplicate2(List dataList) {
+//        Set set = new HashSet();
+//        List newList = new ArrayList();
+//        for (Object element : dataList) {
+//            if (set.add(element)) {
+//                newList.add(element);
+//            }
+//        }
+//        return newList;
+//    }
 
     /**
      * @param stringList
      * @param seperator
-     *
      * @return
-     *
      * @description List转为指定符号隔开的String字符串
-     * @author wragony
-     * @modifier
-     * @modifier_date
      */
-    public static <T> String listToString(List<T> stringList, String seperator) {
+    public static String listToString(List<String> stringList, String seperator) {
         if (stringList == null) {
             return null;
         }
         StringBuilder result = new StringBuilder();
         boolean flag = false;
-        for (T t : stringList) {
+        for (String t : stringList) {
             if (flag) {
                 result.append(seperator);
             } else {
                 flag = true;
             }
-            result.append(t.toString());
+            result.append(t);
         }
         return result.toString();
     }
 
     /**
-     * List转成字符串 分隔符|
-     *
-     * @param imageurl
-     *
-     * @return
-     */
-    public static String getUrlStr(List<String> imageurl) {
-        String fileUrl = "";
-        if (imageurl.size() > 0) {
-            for (int i = 0; i < imageurl.size(); i++) {
-                if (fileUrl.equals("")) {
-                    fileUrl = "file://" + imageurl.get(i);
-                } else {
-                    fileUrl = fileUrl + "|" + "file://" + imageurl.get(i);
-                }
-            }
-        }
-        return fileUrl;
-    }
-
-    /**
      * @param seperator 分割符
      * @param imageUrl  以分隔符隔开的字符串
-     *
      * @return
-     *
      * @description 将以分隔符隔开的字符串转换为List
-     * @author wragony
      */
     public static ArrayList<String> getUrlStrList(String imageUrl, String seperator) {
         ArrayList<String> results = new ArrayList<>();
@@ -695,10 +521,8 @@ public class StringUtil {
 
     /**
      * 数组转String
-     *
      * @param srcArray
      * @param seperator
-     *
      * @return
      */
     public static String array2String(String[] srcArray, String seperator) {
@@ -718,14 +542,9 @@ public class StringUtil {
 
     /**
      * 字符串转为指定符号隔开的数组
-     *
      * @param string
      * @param seperator
-     *
      * @return
-     *
-     * @modifier_date
-     * @author 李平
      */
     public static String[] stringToArray(String string, String seperator) {
         if (StringUtil.isEmpty(string)) {
@@ -737,13 +556,9 @@ public class StringUtil {
 
     /**
      * 字符串数组合并
-     *
      * @param a
      * @param b
-     *
      * @return
-     *
-     * @author wragony
      */
     public static String[] concat(String[] a, String[] b) {
         String[] c = new String[ a.length + b.length ];
@@ -753,33 +568,17 @@ public class StringUtil {
     }
 
     /**
-     * 转换成百分比
-     *
-     * @param total   总基数
-     * @param num     要转换的数
-     * @param maximum 精确到小数点后第几位
-     *
+     * 拼装接口地址，用于查看接口返回数据
+     * @param apiURL
+     * @param paramMap
      * @return
-     *
-     * @description TODO
-     * @modifier_date
-     * @author 李平
      */
-    public static String getPercent(int total, int num, int maximum) {
-        // 创建一个数值格式化对象
-        NumberFormat numberFormat = NumberFormat.getInstance();
-        // 设置精确到小数点后2位
-        numberFormat.setMaximumFractionDigits(0);
-        String result = numberFormat.format((float) num / (float) total * 100) + "%";
-        return result;
-    }
-
     public static String getApiURL(String apiURL, Map<String, String> paramMap) {
-        Iterator<Entry<String, String>> iter = paramMap.entrySet().iterator();
+        Iterator<Map.Entry<String, String>> iter = paramMap.entrySet().iterator();
         StringBuilder sb = new StringBuilder();
         sb.append(apiURL);
         while (iter.hasNext()) {
-            Entry<String, String> entry = iter.next();
+            Map.Entry<String, String> entry = iter.next();
             if (sb.indexOf("?") != -1) {
                 sb.append("&");
             } else {
@@ -791,23 +590,64 @@ public class StringUtil {
     }
 
     /**
-     * 是否是需要模拟手机号码
-     *
+     * 电话号码加密显示
      * @param mobile
      * @return
-     * @author wragony
      */
-    public static boolean isSimulateLoginMobile(String mobile) {
-        return mobile.matches("^[mM][nN][1][1,2,3,4,5,6,7,8,9]+\\d{9}");
+    public static String formatMobile(String mobile) {
+
+        return mobile.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
     }
 
     /**
-     * 判断是否包含
-     * @param value
-     * @param value2
+     * 邮箱号码加密显示
+     * @param email
      * @return
      */
-    public static boolean isContain(String value, String value2) {
-        return value != null && value.contains(value2);
+    public static String formatEmail(String email) {
+
+        return email.replaceAll("(\\w?)(\\w+)(\\w)(@\\w+\\.[a-z]+(\\.[a-z]+)?)", "$1****$3$4");
+    }
+
+    /**
+     * 版本号比较
+     *
+     * @param serverVersion
+     * @param localVersion
+     * @return -1:server < local;  0:server = local;   1:server > local;
+     */
+    public static int compareVersion(String serverVersion, String localVersion) {
+        if (serverVersion.equals(localVersion)) {
+            return 0;
+        }
+        String[] version1Array = serverVersion.split("\\.");
+        String[] version2Array = localVersion.split("\\.");
+        int index = 0;
+        // 获取最小长度值
+        int minLen = Math.min(version1Array.length, version2Array.length);
+        int diff = 0;
+        // 循环判断每位的大小
+        while (index < minLen
+                && (diff = Integer.parseInt(version1Array[index])
+                - Integer.parseInt(version2Array[index])) == 0) {
+            index++;
+        }
+        if (diff == 0) {
+            // 如果位数不一致，比较多余位数
+            for (int i = index; i < version1Array.length; i++) {
+                if (Integer.parseInt(version1Array[i]) > 0) {
+                    return 1;
+                }
+            }
+
+            for (int i = index; i < version2Array.length; i++) {
+                if (Integer.parseInt(version2Array[i]) > 0) {
+                    return -1;
+                }
+            }
+            return 0;
+        } else {
+            return diff > 0 ? 1 : -1;
+        }
     }
 }

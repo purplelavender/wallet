@@ -12,13 +12,12 @@ import com.bumptech.glide.util.Util;
 import share.exchange.framework.R;
 
 /**
- * @description: glide图片加载
- * @author: yinfx
- * @email: yfx@91118.com
- * @createDate: 2017/10/10
- * @company: 杭州天音
+ *
+ * @ClassName:      GlideImageUtil
+ * @Description:    glide图片加载
+ * @Author:         ZL
+ * @CreateDate:     2019/08/12 10:17
  */
-
 public class GlideImageUtil {
 
 
@@ -31,7 +30,7 @@ public class GlideImageUtil {
      */
     public static void with(Context context, String imageUrl, ImageView imageView) {
         if (!isFinishing(context) && Util.isOnMainThread()) {
-            with(context, imageUrl, imageView, R.drawable.imgscan_pictures_no);
+            with(context, imageUrl, imageView, R.drawable.ic_pictures_error);
         }
     }
 

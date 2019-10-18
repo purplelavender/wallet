@@ -5,5 +5,9 @@
     <color name="common_color_toast_warn">#feb600</color>
     <color name="color_title">#1F3F59</color>
     <color name="color_notice_bg">#EFEFEF</color>
+    <color name="white_title">#CFD3E9</color>
+    <color name="color_green">#03C088</color>
+    <color name="color_black">#000000</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

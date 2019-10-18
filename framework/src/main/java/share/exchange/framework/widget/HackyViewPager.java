@@ -24,6 +24,8 @@ import android.view.MotionEvent;
  * just catching the problem and ignoring it.
  * 
  * @author Chris Banes
+ *
+ * 可以锁定左右滑动的ViewPager
  */
 public class HackyViewPager extends ViewPager {
 

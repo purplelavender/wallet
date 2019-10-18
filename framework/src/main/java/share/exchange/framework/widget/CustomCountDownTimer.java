@@ -1,4 +1,4 @@
-package share.exchange.framework.utils;
+package share.exchange.framework.widget;
 
 import android.os.Handler;
 import android.os.Message;
@@ -12,7 +12,6 @@ import java.lang.ref.WeakReference;
  * @Author: ZL
  * @CreateDate: 2019/04/16 10:04
  */
-
 public abstract class CustomCountDownTimer {
 
     /**
@@ -48,7 +47,7 @@ public abstract class CustomCountDownTimer {
     }
 
     /**
-     * Cancel the countdown.
+     * Cancel the countdown.-
      */
     public synchronized final void cancel() {
         mCancelled = true;

@@ -24,7 +24,7 @@
         android:layout_gravity="center"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:textColor="@android:color/white" />
+        android:textColor="@color/white" />
 
     <View
         android:id="@+id/divider"
@@ -33,7 +33,7 @@
         android:layout_marginBottom="4dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="4dp"
-        android:background="@android:color/white" />
+        android:background="@color/white" />
 
     <LinearLayout
         android:id="@+id/btn"
@@ -50,7 +50,7 @@
             android:layout_gravity="center"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/white" />
 
         <ImageView
             android:id="@+id/btn_icon"

@@ -773,7 +773,6 @@ public class FileUtil {
      * @param fromFile
      * @param toFile
      * @return
-     * @author wragony
      */
     public synchronized static int copyFolder(String fromFile, String toFile) {
         // 要复制的文件目录
@@ -917,7 +916,6 @@ public class FileUtil {
      * @param mContext
      * @return
      * @description 获取根目录
-     * @author wragony
      * @modifier
      * @modifier_date
      */

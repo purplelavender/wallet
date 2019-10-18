@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 /**
  * @ClassName: AutoSizeTextView
- * @Description: java类作用描述
+ * @Description: 自动调整文字的大小（单行显示）
  * @Author: ZL
  * @CreateDate: 2019/07/09 14:57
  */
@@ -29,11 +29,11 @@ public class AutoSizeTextView extends TextView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int line=getLineCount();
-        float textsize=getTextSize();
-        if(line>1){
+        int line = getLineCount();
+        float textsize = getTextSize();
+        if (line > 1) {
             textsize--;
-            setTextSize(TypedValue.COMPLEX_UNIT_PX,textsize);
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, textsize);
         }
     }
 }

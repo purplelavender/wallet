@@ -17,7 +17,7 @@ public class LoadingProgressDialog extends Dialog {
 	private TextView tvMsg;
 
 	public LoadingProgressDialog(Activity mActivity) {
-		super(mActivity, R.style.CustomProgressDialog);
+		this(mActivity, R.style.CustomProgressDialog);
 	}
 
 	public LoadingProgressDialog(Activity mActivity, int theme) {

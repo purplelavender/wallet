@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">framework</string>
 
-    <string name="no_network">网络不通畅，请稍后再试</string>
     <string name="market_tips">公告</string>
+    <string name="is_loading">加载中...</string>
+    <string name="no_network">网络不通畅，请稍后再试</string>
+    <string name="no_login">您的帐号在别处登录，如非本人操作请及时修改密码</string>
+    <string name="goto_login">立即登录</string>
+    <string name="re_loading">重新加载</string>
+    <string name="no_result">暂无记录</string>
 </resources>

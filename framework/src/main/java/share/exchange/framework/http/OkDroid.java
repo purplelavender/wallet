@@ -40,7 +40,6 @@ public class OkDroid {
                 .writeTimeout(15, TimeUnit.SECONDS)//设置写的超时时间
                 .connectTimeout(15, TimeUnit.SECONDS)//设置连接超时时间
                 .build();
-//                .addInterceptor(logging).build();
     }
 
     public static OkDroid getInstance() {
