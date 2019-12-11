@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<share.exchange.framework.widget.MyScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/modle_exchange"
+                android:textColor="@color/color_black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/sp_exchange_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:scrollbars="none"
+                android:dropDownVerticalOffset="30dp"
+                android:spinnerMode="dropdown"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_exchange_start_coin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gray_stroke_corners"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="HS"
+                    android:textColor="@color/color_black"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/et_exchange_start_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_whitegray_circle_corners"
+                    android:inputType="numberDecimal"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:hint="@string/modle_exchange_count"
+                    android:padding="8dp"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="@color/tab_normal_color"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/moshi_icon_duihuan"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gray_stroke_corners"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="USDT"
+                    android:textColor="@color/color_black"
+                    android:textSize="16sp"/>
+
+                <share.exchange.framework.widget.AutoSizeTextView
+                    android:id="@+id/tv_exchange_target_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_whitegray_circle_corners"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/modle_get_count"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/tv_available_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_available_pcs"
+                android:textColor="@color/color_696969"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_exchange_available"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="--"
+                android:textColor="@color/color_black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_exchange_rate"
+                android:textColor="@color/color_696969"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_exchange_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="--"
+                android:textColor="@color/color_black"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_exchange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_red_corners"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/modle_exchange"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_exchange_rule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modle_value_add_notice"
+            android:textSize="14sp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/color_696969"
+            android:layout_marginTop="30dp"/>
+
+    </LinearLayout>
+
+</share.exchange.framework.widget.MyScrollView>

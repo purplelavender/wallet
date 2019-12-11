@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="@string/regist_check_mnemonic_word"
+        android:textColor="@color/color_black"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/color_line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/regist_check_mnemonic_word_tag"
+        android:textColor="@color/tab_selected_color"
+        android:textSize="12sp"/>
+
+    <share.exchange.framework.widget.WrapLinearLayout
+        android:id="@+id/ll_select_word"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@drawable/bg_gray_corners"
+        app:grivate="left"
+        app:horizontal_Space="10dp"
+        app:isFull="false"
+        app:vertical_Space="10dp">
+
+    </share.exchange.framework.widget.WrapLinearLayout>
+
+    <share.exchange.framework.widget.WrapLinearLayout
+        android:id="@+id/ll_check_word"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:grivate="left"
+        app:horizontal_Space="10dp"
+        app:isFull="false"
+        app:vertical_Space="10dp">
+
+    </share.exchange.framework.widget.WrapLinearLayout>
+
+    <TextView
+        android:id="@+id/tv_mnemonic_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_red_corners"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/regist_sure"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+</LinearLayout>

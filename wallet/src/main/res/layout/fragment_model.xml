@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <share.exchange.framework.widget.NoticeView
+        android:id="@+id/notice_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        app:isSetAnimDuration="false"
+        app:isSingleLine="true"
+        app:marquee_animDuration="1000"
+        app:marquee_interval="5000"
+        app:marquee_textColor="@color/color_black"/>
+
+    <share.exchange.framework.widget.MyScrollView
+        android:id="@+id/scroll_model"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:background="@drawable/moshi_beijing"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/modle_released_earning"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <CheckBox
+                        android:id="@+id/cb_model_eye"
+                        android:layout_width="25dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/cb_eye_wallet"
+                        android:button="@null"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <share.exchange.framework.widget.AutoSizeTextView
+                    android:id="@+id/tv_model_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="0.0000"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold"/>
+
+                <share.exchange.framework.widget.AutoSizeTextView
+                    android:id="@+id/tv_model_dig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_yellow_stroke_corners"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/modle_dig_earning"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/modle_available_assets"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/modle_drawable_principal"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:id="@+id/tv_model_available"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0.0000"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:id="@+id/tv_model_principal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0.0000"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-40dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/bg_gray_corners"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_model_exchange"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/moshi_icon_duihuan"/>
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/modle_exchange"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_model_value_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/moshi_icon_zengzhi"/>
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/modle_value_add_title"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_model_join"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/moshi_icon_canyu"/>
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/modle_join"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_model_extract"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/moshi_icon_tiqu"/>
+
+                    <share.exchange.framework.widget.AutoSizeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="@string/modle_extract"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_model_record"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:tabSelectedTextColor="@color/tab_selected_color"
+                app:tabTextColor="@color/color_696969"
+                app:tabIndicatorColor="@color/tab_selected_color"/>
+
+            <share.exchange.framework.widget.HackyViewPager
+                android:id="@+id/vp_model_record"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </share.exchange.framework.widget.MyScrollView>
+
+</LinearLayout>

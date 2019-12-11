@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+
+    <share.exchange.framework.widget.AutoSizeTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/dialog_join_type_title"
+        android:textColor="@color/color_black"
+        android:textSize="16sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_line"/>
+
+    <TextView
+        android:id="@+id/tv_dialog_join_type"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/dialog_join_type_rule"
+        android:textColor="@color/color_04041D"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_join_known"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_red_corners"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/dialog_already_known"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+</LinearLayout>

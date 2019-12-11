@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qianbao_diwen"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="@string/main_wallet"
+            android:textColor="@color/color_black"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_history_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:gravity="right"
+            android:text="@string/wallet_history_record"
+            android:textColor="@color/color_black"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:background="@drawable/qianbao_beijing">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/wallet_all_assets"
+                android:textSize="14sp"
+                android:textColor="@color/white"/>
+
+            <CheckBox
+                android:id="@+id/cb_wallet_eye"
+                android:layout_width="25dp"
+                android:layout_height="15dp"
+                android:button="@null"
+                android:background="@drawable/cb_eye_wallet"/>
+
+        </LinearLayout>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_wallet_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="≈ 0.0"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_empty"/>
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/rv_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
+
+    </FrameLayout>
+
+</LinearLayout>

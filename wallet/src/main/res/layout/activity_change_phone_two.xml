@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/color_line"/>
+
+    <LinearLayout
+        android:id="@+id/ll_phone_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bind_phone_select_country"
+            android:textColor="@color/color_black"
+            android:textSize="14sp"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_phone_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:drawableRight="@drawable/text_indicator"
+            android:drawablePadding="5dp"
+            android:text="@string/bind_phone_select_country"
+            android:textColor="@color/tab_selected_color"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bind_phone_num"
+            android:textColor="@color/color_black"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/et_new_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:inputType="phone"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:background="@null"
+            android:hint="@string/bind_new_phone_tag"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/tab_normal_color"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bind_sms_code"
+            android:textColor="@color/color_black"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/et_new_phone_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:inputType="textPhonetic"
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/bind_sms_code"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/tab_normal_color"
+            android:textSize="14sp"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_phone_get_code"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_red_stroke_corners"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/bind_get_sms_code"
+            android:textColor="@color/tab_selected_color"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tv_phone_sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_red_corners"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/bind_sure"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+
+</LinearLayout>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<share.exchange.framework.widget.MyScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="10dp">
+
+        <share.exchange.framework.widget.CircleImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/icon_shouyixiangqing"/>
+
+        <TextView
+            android:id="@+id/tv_earning_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 USDT"
+            android:textColor="@color/color_black"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_time"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_list_join_type"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_earning_join"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_join"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_earning_m_exchange"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_exchange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_earning_award_pool"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_award"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_earning_destruction_pool"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_destruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_exchange_rate"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_earning_in_wallet"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_earning_save_benjin"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_earning_benjin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+    </LinearLayout>
+
+</share.exchange.framework.widget.MyScrollView>

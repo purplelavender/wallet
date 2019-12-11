@@ -1,0 +1,461 @@
+<resources>
+    <string name="app_name">Hilbert Space</string>
+
+    <string name="main_wallet">钱包</string>
+    <string name="main_market">行情</string>
+    <string name="main_model">HS空间</string>
+    <string name="main_mine">我的</string>
+
+    <string name="country_search">搜索</string>
+    <string name="assets_section_close">关闭</string>
+    <string name="assets_section_expend">展开</string>
+
+    <!-- interface success -->
+    <string name="interface_login_success">登陆成功</string>
+    <string name="interface_regist_success">注册成功</string>
+    <string name="interface_send_success">发送成功</string>
+    <string name="interface_change_success">修改成功</string>
+    <string name="interface_exchange_success">兑换成功</string>
+    <string name="interface_join_success">参与成功</string>
+    <string name="interface_value_success">价值放大成功</string>
+    <string name="interface_extract_success">提取成功</string>
+    <string name="interface_transfer_success">转账成功</string>
+    <string name="interface_add_success">添加成功</string>
+    <string name="interface_reply_success">回复成功</string>
+    <string name="interface_bind_success">绑定成功</string>
+    <string name="interface_version_new">已经是最新版本了</string>
+    <string name="interface_down_failed">下载出错，请检查网络连接状况及手机内存空间</string>
+    <string name="interface_yuyue_success">预约成功</string>
+    <string name="interface_upload_photo">图片上传中</string>
+    <string name="interface_delete_success">删除成功</string>
+    <string name="interface_no_yuyue">您还没有预约排队</string>
+    <string name="interface_in_yuyue">您当前已在预约排队中，请勿重复参与！</string>
+    <string name="interface_copy_success">复制成功</string>
+
+    <!-- interface error -->
+    <string name="interface_error_yichang">未知异常，请联系管理员</string>
+    <string name="interface_error_nocunzai">用户不存在</string>
+    <string name="interface_error_passworderror">密码错误</string>
+    <string name="interface_error_success">请求成功</string>
+    <string name="interface_error_noworkorder">不是自己的工单,不能结束</string>
+    <string name="interface_error_nooldpassword">原密码错误</string>
+    <string name="interface_error_nopassword">密码错误</string>
+    <string name="interface_error_nologinpassword">登录密码错误</string>
+    <string name="interface_error_nocodes">邀请码填写错误,请确认邀请码</string>
+    <string name="interface_error_noaddress">该地址与自己不匹配,请确认</string>
+    <string name="interface_error_exchange">兑换成功</string>
+    <string name="interface_error_zeroparticipate">参与金额不能为0</string>
+    <string name="interface_error_noavailabs">可用资金不足</string>
+    <string name="interface_error_nominables">可挖取数量不足</string>
+    <string name="interface_error_nocode">该邀请码不存在</string>
+    <string name="interface_error_zerocapital">提取金额不能为0</string>
+    <string name="interface_error_nocapital">可提取资金不足</string>
+    <string name="interface_error_getcodes">请先获取验证码</string>
+    <string name="interface_error_codesno">验证码不正确,请重新输入</string>
+    <string name="interface_error_cophone">原手机号输入错误</string>
+    <string name="interface_error_nozhujici">助记词错误</string>
+    <string name="interface_error_oldnewpassword">新密码不能跟原密码一样</string>
+    <string name="interface_error_gucodes">谷歌验证码错误</string>
+    <string name="interface_error_phonecodes">手机验证码错误</string>
+    <string name="interface_error_emailcodes">邮箱验证码错误</string>
+    <string name="interface_error_duishuliang">兑换数量不能为0</string>
+    <string name="interface_error_duixiaoyu">兑换数量不能小于0</string>
+    <string name="interface_error_yue">您的余额不足</string>
+    <string name="interface_error_tibierror">提币失败</string>
+    <string name="interface_error_yuyue">您已存在预约,不能继续预约</string>
+    <string name="interface_error_yuyuejine">预约金额不能为0</string>
+    <string name="interface_error_exchange_zero">兑换数量不能为0</string>
+    <string name="interface_error_value_zero">价值放大数量不能为0</string>
+    <string name="interface_error_join_zero">挖取数量不能为0</string>
+    <string name="interface_error_extract_zero">提取数量不能为0</string>
+    <string name="interface_error_send_code">发送验证码失败</string>
+    <string name="interface_error_phone_alread_bind">该手机号已经绑定</string>
+    <string name="interface_error_mail_alread_bind">该邮箱已经绑定</string>
+    <string name="interface_error_upload">上传失败</string>
+    <string name="interface_error_yuyue_time">节点全网广播中，请稍候参与</string>
+    <string name="interface_error_exchange_one">最小兑换数量为1</string>
+    <string name="interface_error_value_one">最小放大数量为1</string>
+    <string name="interface_error_extract_one">最小提取数量为1</string>
+    <string name="interface_error_join_one">最小挖取数量为1</string>
+
+    <!-- 我的 -->
+    <string name="mine_uid">UID：%s</string>
+    <string name="mine_money">算力明细</string>
+    <string name="mine_my_group">我的社群</string>
+    <string name="mine_invite">邀请分享</string>
+    <string name="mine_project_apply">项目申请</string>
+    <string name="mine_safe_bind">安全绑定</string>
+    <string name="mine_password_manager">密码管理</string>
+    <string name="mine_language">语言切换</string>
+    <string name="mine_work_order">系统工单</string>
+    <string name="mine_check_version">检查版本</string>
+    <string name="mine_login_out">注销登录</string>
+
+    <!-- 项目申请 -->
+    <string name="project_apply_list">申请列表</string>
+    <string name="project_apply_title">《项目申请条文》</string>
+    <string name="project_apply_agree">我同意</string>
+    <string name="project_coin_attribute">币种属性</string>
+    <string name="project_name">项目名称</string>
+    <string name="project_name_tag">请输入项目名称</string>
+    <string name="project_web_address">官网地址</string>
+    <string name="project_web_address_tag">请输入官网地址</string>
+    <string name="project_paper_address">白皮书地址</string>
+    <string name="project_paper_address_tag">请输入白皮书地址</string>
+    <string name="project_exchange">上架交易所</string>
+    <string name="project_exchange_tag">请输入已上架的交易所名称</string>
+    <string name="project_guarantor">担保人</string>
+    <string name="project_guarantor_tag">请输入担保人</string>
+    <string name="project_guarantor_phone">负责人电话号</string>
+    <string name="project_guarantor_phone_tag">请输入负责人电话号</string>
+    <string name="project_guarantor_wx">负责人微信号/电报</string>
+    <string name="project_guarantor_wx_tag">请输入正在使用的微信号/电报</string>
+    <string name="project_guarantor_mail">负责人邮箱</string>
+    <string name="project_guarantor_mail_tag">请输入负责人邮箱号码</string>
+    <string name="project_guarantor_detail">团附介绍</string>
+    <string name="project_guarantor_detail_tag">请输入其附加介绍</string>
+    <string name="project_submit_apply">提交申请</string>
+
+    <!-- 绑定相关 -->
+    <string name="bind_google">谷歌绑定</string>
+    <string name="bind_phone">手机绑定</string>
+    <string name="bind_mail">邮箱绑定</string>
+    <string name="bind_already_bind">已绑定</string>
+    <string name="bind_go_bind">去绑定</string>
+    <string name="bind_go_change">修改</string>
+    <string name="bind_login_password">登录密码</string>
+    <string name="bind_login_password_tag">请输入登录密码</string>
+    <string name="bind_phone_num">手机号码</string>
+    <string name="bind_phone_num_tag">请输入需要绑定的手机号</string>
+    <string name="bind_sms_code">短信验证码</string>
+    <string name="bind_get_sms_code">获取验证码</string>
+    <string name="bind_sure">确定</string>
+    <string name="bind_mail_num">邮箱号码</string>
+    <string name="bind_mail_num_tag">请输入需要绑定的邮箱号</string>
+    <string name="bind_mail_code">邮箱验证码</string>
+    <string name="bind_google_step_one">在应用商店中搜索“Google Authenticator”应用并下载。</string>
+    <string name="bind_google_step_two">安装完成后打开Google Authenticator，点击右上角(安卓为右下角)的“+”，选择“手动输入秘钥”，页面中填入您的账户名和下方秘钥。</string>
+    <string name="bind_google_step_three">添加成功后，您将得到一个有一定时效的6位数验证码，请将该验证码填入下方输入框中(需要在验证码时效内)。</string>
+    <string name="bind_google_code">谷歌验证码</string>
+    <string name="bind_google_code_tag">请输入谷歌验证码</string>
+    <string name="bind_google_copy">复制</string>
+    <string name="bind_google_next_step">下一步</string>
+    <string name="bind_google_step_tag">复制秘钥或者截图保存，可能存在安全风险，请妥善保存</string>
+    <string name="bind_change_phone">手机修改</string>
+    <string name="bind_old_phone_tag">请输入已绑定的手机号码</string>
+    <string name="bind_new_phone_tag">请输入新的手机号码</string>
+    <string name="bind_google_rqcode_error">生成二维码失败</string>
+    <string name="bind_send_success">验证码发送成功</string>
+    <string name="bind_get_code_again">重新获取验证码</string>
+    <string name="bind_change_success">修改成功</string>
+    <string name="bind_setting_success">设置成功</string>
+    <string name="bind_phone_country">中国 (+86)</string>
+    <string name="bind_phone_select_country">选择国家</string>
+
+    <!-- 密码相关 -->
+    <string name="password_money_password">资金密码</string>
+    <string name="password_go_setting">去设置</string>
+    <string name="password_change_password_title">修改登录密码</string>
+    <string name="password_old_password">旧密码</string>
+    <string name="password_old_password_tag">请输入登录密码</string>
+    <string name="password_new_password">新密码</string>
+    <string name="password_new_password_tag">请输入6~16位密码</string>
+    <string name="password_sure_password">确认密码</string>
+    <string name="password_sure_password_tag">请输入确认密码</string>
+    <string name="password_money_password_tag">请输入6~16位资金密码</string>
+    <string name="password_zhujici_find">助记词找回</string>
+
+    <!-- 语言 -->
+    <string name="language_simplified_chinese">简体中文</string>
+    <string name="language_traditional_chinese">繁體中文</string>
+    <string name="language_english">English</string>
+    <string name="language_wait">敬请期待</string>
+
+    <!-- 工单 -->
+    <string name="order_new">新建工单</string>
+    <string name="order_title">标题</string>
+    <string name="order_title_tag">请输入标题</string>
+    <string name="order_detail">问题详情</string>
+    <string name="order_detail_tag">请详细描述您所遇到的问题</string>
+    <string name="order_reply">回复</string>
+    <string name="order_service_reply">客服回复</string>
+    <string name="order_reply_order">工单回复</string>
+    <string name="order_close">结束工单</string>
+    <string name="order_submit">提交</string>
+    <string name="order_mail_tag">请输入接收反馈的邮箱号码</string>
+
+    <!-- 邀请相关 -->
+    <string name="invite_share">分享</string>
+    <string name="invite_save">保存</string>
+    <string name="invite_join">%s邀请您一起加入希尔伯特空间</string>
+    <string name="invite_my_code">我的邀请码</string>
+    <string name="invite_click_copy">点击复制邀请码</string>
+    <string name="invite_sao_qrcode">扫描二维码</string>
+    <string name="invite_regist_down">注册并下载希尔伯特空间</string>
+    <string name="invite_regist_down_tag">无限维去中心公式经济映射空间</string>
+    <string name="invite_save_qrcode">保存二维码</string>
+
+    <!-- 登录注册相关 -->
+    <string name="login">登录</string>
+    <string name="login_name">帐号</string>
+    <string name="login_name_tag">请输入自定义帐号</string>
+    <string name="login_password">密码</string>
+    <string name="login_password_tag">请输入密码</string>
+    <string name="login_forgot_password">忘记密码</string>
+    <string name="login_regist">注册账号</string>
+    <string name="login_agree_service">登录即代表阅读并同意服务协议</string>
+    <string name="regist">注册</string>
+    <string name="regist_sure">确定注册</string>
+    <string name="regist_name_tag">请输入6~16位自定义帐号</string>
+    <string name="regist_sure_tag">请再次输入密码</string>
+    <string name="regist_invite_code">邀请码</string>
+    <string name="regist_invite_code_tag">请输入邀请码</string>
+    <string name="regist_agree_service">注册即代表阅读并同意服务协议</string>
+    <string name="forgot_phone_mail">手机/邮箱找回</string>
+    <string name="forgot_bind_phone_mail">绑定账号</string>
+    <string name="forgot_bind_phone_mail_tag">请输入绑定的手机号/邮箱</string>
+    <string name="forgot_code">验证码</string>
+    <string name="forgot_code_tag">请输入验证码</string>
+    <string name="forgot_sure_change">确认修改</string>
+    <string name="forgot_google">谷歌找回</string>
+    <string name="forgot_paste">粘贴</string>
+    <string name="regist_risk_warning">风险提示</string>
+    <string name="regist_agree_and_regist">同意并注册</string>
+    <string name="regist_name_error">(该用户名已被注册)</string>
+    <string name="regist_mark_mnemonic_word">备份助记词</string>
+    <string name="regist_mark_mnemonic_word_tag">请将它准确的抄写到纸上，并保存在只有你知道的安全带地方。</string>
+    <string name="regist_check_mnemonic_word">验证助记词</string>
+    <string name="regist_check_mnemonic_word_tag">请按照顺序点击填写你的助记词，以确认你的助记词正确。</string>
+    <string name="forgot_mnemonic_password">请按照顺序点击填写你的助记词，并用逗号“，”隔开。</string>
+    <string name="forgot_mnemonic">助记词</string>
+    <string name="forgot_phone">手机</string>
+    <string name="forgot_mail">邮箱</string>
+    <string name="forgot_bind_phone">绑定手机</string>
+    <string name="forgot_bind_phone_tag">请输入绑定的手机号</string>
+    <string name="forgot_bind_mail">绑定邮箱</string>
+    <string name="forgot_bind_mail_tag">请输入绑定的邮箱号</string>
+
+    <!-- 钱包相关 -->
+    <string name="wallet_history_record">历史记录</string>
+    <string name="wallet_all_assets">总资产(USDT)</string>
+    <string name="wallet_about">≈ %s</string>
+    <string name="wallet_all">全部</string>
+    <string name="wallet_in">转入</string>
+    <string name="wallet_out">转出</string>
+    <string name="wallet_gathering">收款</string>
+    <string name="wallet_gathering_success">收款成功</string>
+    <string name="wallet_gathering_address">收款地址</string>
+    <string name="wallet_transfer">转账</string>
+    <string name="wallet_transfer_success">转账成功</string>
+    <string name="wallet_transfer_address">付款地址</string>
+    <string name="wallet_time">时间</string>
+    <string name="wallet_type">状态</string>
+    <string name="wallet_amount">金额</string>
+    <string name="wallet_fee">矿工费用</string>
+    <string name="wallet_mark">备注</string>
+    <string name="wallet_mark_tag">选填</string>
+    <string name="wallet_count">数量</string>
+    <string name="wallet_balance">余额：</string>
+    <string name="wallet_address_ben">地址本</string>
+    <string name="wallet_add_address">添加地址</string>
+    <string name="wallet_add_address_tag">输入或长按粘贴地址</string>
+    <string name="wallet_fee_detail">支付详情</string>
+    <string name="wallet_order_info">订单信息</string>
+    <string name="wallet_safe_check">安全验证</string>
+    <string name="wallet_send">发送</string>
+    <string name="wallet_cancel">取消</string>
+    <string name="wallet_gathering_rule">注:\n请勿向上述地址转入除%1$s之外的任何资产，否则将不可找回。\n转入上述地址后需要12个网络确认后到账。\n转账最小额度为1%2$s,小于1%3$s将无法到账。\n请务必确认网络环境安全，防止信息被泄露。</string>
+    <string name="wallet_transfer_rule">注:\n最小转账数量为：%1$s %2$s。\n请您转账时务必核对您的收款地址，检测网络环境安全，防止信息被泄露。</string>
+    <string name="wallet_hash_value">哈希值</string>
+    <string name="wallet_hash_height">区块高度</string>
+
+    <!-- 模式相关 -->
+    <string name="modle_project">莫比乌斯变换</string>
+    <string name="modle_award_pool">奖金池</string>
+    <string name="modle_released_earning">待释放资产(USDT)</string>
+    <string name="modle_dig_earning">莫比乌斯转换 %s USDT</string>
+    <string name="modle_dig_earning_tag">莫比乌斯转换(USDT)</string>
+    <string name="modle_available_assets">待转换共识(USDT)</string>
+    <string name="modle_drawable_principal">可提取算力(USDT)</string>
+    <string name="modle_exchange">兑换</string>
+    <string name="modle_value_add_title">放大</string>
+    <string name="modle_value_add">价值放大</string>
+    <string name="modle_join">虫洞</string>
+    <string name="modle_extract">提取</string>
+    <string name="modle_join_record">参与记录</string>
+    <string name="modle_release_record">算力产出</string>
+    <string name="modle_exchange_rate">汇率</string>
+    <string name="modle_destruction">销毁</string>
+    <string name="modle_lock">锁定</string>
+    <string name="modle_dig_count">挖取数量</string>
+    <string name="modle_dig_count_tag">请输入需要挖取USDT的数量</string>
+    <string name="modle_need_dig_usdt">所需共识转换USDT</string>
+    <string name="modle_release_dig_usdt">待转换共识USDT</string>
+    <string name="modle_benjin_dig_usdt">可用算力USDT</string>
+    <string name="modle_pause_time">周期</string>
+    <string name="modle_total_amount">提取总金额%s</string>
+    <string name="modle_buy_count">购买数量</string>
+    <string name="modle_get_count">收到数量</string>
+    <string name="modle_value_add_notice">虫洞系统价值放大规则：\n虫洞系统用户可通过合作的第三方Token放大原Token价值10倍资产，日释放0.5%。\n释放资产累计不归零，释放资产需要通过虫洞系统POA挖矿机制1：10（T+5）共识转换产出！</string>
+    <string name="modle_exchange_count">兑换数量</string>
+    <string name="modle_extract_count">提取数量</string>
+    <string name="modle_extract_count_tag">请输入需要进行提取算力的数量</string>
+    <string name="modle_extract_total">提取总算力HS</string>
+    <string name="modle_now_rate">当前汇率</string>
+    <string name="modle_destruction_pool">销毁池</string>
+    <string name="modle_destruction_rule">销毁池规则</string>
+    <string name="modle_award_rule">奖金池释放规则</string>
+    <string name="modle_available_pcs">可用%s</string>
+    <string name="modle_join_pause_time">T + 5</string>
+    <string name="modle_list_count">数量(%s)</string>
+    <string name="modle_list_exchange_count">兑换数量(USDT)</string>
+    <string name="modle_list_buy_count">购买数量(%s)</string>
+    <string name="modle_list_value_count">放大价值(USDT)</string>
+    <string name="modle_list_join_type">参与方式</string>
+    <string name="modle_list_join_count">参与数量(USDT)</string>
+    <string name="modle_list_dig_count">挖取数量(USDT)</string>
+    <string name="modle_list_extract_count">提取数量(USDT)</string>
+    <string name="modle_list_account_count">到账数量(%s)</string>
+    <string name="modle_award_total">当前奖金池总数量</string>
+    <string name="modle_destruction_total">当前销毁池总数量</string>
+    <string name="modle_earning_join">参与共识</string>
+    <string name="modle_earning_m_exchange">莫比乌斯转换</string>
+    <string name="modle_earning_award_pool">保障基金扣除</string>
+    <string name="modle_earning_destruction_pool">黑洞销毁</string>
+    <string name="modle_earning_in_wallet">转入钱包</string>
+    <string name="modle_earning_save_benjin">存储算力</string>
+
+    <!-- 行情相关 -->
+    <string name="market_name">名称</string>
+    <string name="market_now_price">最新价</string>
+    <string name="market_up_down">涨跌幅</string>
+    
+    <!-- 社群相关 -->
+    <string name="group_node_one">一星节点</string>
+    <string name="group_node_two">二星节点</string>
+    <string name="group_node_three">三星节点</string>
+    <string name="group_node_four">四星节点</string>
+    <string name="group_node_five">五星节点</string>
+    <string name="group_persional_join_earning">个人参与算力(USDT)</string>
+    <string name="group_total_num">社群总人数</string>
+    <string name="group_total_earning_pcs">社群总算力(HS)</string>
+    <string name="group_total_earning_usdt">社群总算力(USDT)</string>
+    <string name="group_friend">社群伙伴</string>
+    <string name="group_look_friend">查看成员</string>
+    <string name="group_today_earning">当日参与(USDT)</string>
+    <string name="group_today_total_earning">当日社群参与(USDT)</string>
+    <string name="group_total_award">总业绩(USDT)</string>
+    <string name="group_earning_info">算力信息</string>
+    <string name="group_invite_earning">邀请收益</string>
+    <string name="group_node_earning">节点算力</string>
+    <string name="group_node_total_earning">节点总算力(HS)</string>
+    <string name="group_tui_total_earning">推广总算力(HS)</string>
+
+    <!-- 各种列表状态，下拉展示 -->
+    <string name="state_order_reply">待回复</string>
+    <string name="state_order_end">已结束</string>
+    <string name="input_num_letter">1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+    <string name="input_mail">1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM.+-/*!#$%^_=,@</string>
+    <string name="input_num_point">1234567890.</string>
+    <string name="state_join_lock">锁定</string>
+    <string name="state_join_release">产出</string>
+    <string name="state_jin_xi">出矿出算力</string>
+    <string name="state_xi_no_jin">存矿出算力</string>
+    <string name="state_no_xi_no_jin">存矿存算力</string>
+    <string name="state_mingxi_type_all">全部</string>
+    <string name="state_mingxi_type_release">算力产出</string>
+    <string name="state_mingxi_type_join">虫洞参与</string>
+    <string name="state_mingxi_type_exchange">兑换</string>
+    <string name="state_mingxi_type_extract">提取</string>
+    <string name="state_mingxi_type_value">价值放大</string>
+    <string name="state_mingxi_type_dig">释放资产</string>
+    <string name="state_mingxi_type_tui">推广算力</string>
+    <string name="state_mingxi_type_node">节点算力</string>
+    <string name="state_project_daibi">代币</string>
+    <string name="state_project_gonglian">公链</string>
+    <string name="state_project_success">审核成功</string>
+    <string name="state_project_wait">待审核</string>
+    <string name="state_project_failed">审核失败</string>
+
+    <!-- 各种输入验证提示 -->
+    <string name="check_name_empty">帐号不能为空</string>
+    <string name="check_name_length">帐号长度不能小于6位，不能大于16位</string>
+    <string name="check_password_empty">密码不能为空</string>
+    <string name="check_password_length">密码长度不能小于6位，不能大于16位</string>
+    <string name="check_password_sure">两次密码输入不一致</string>
+    <string name="check_phone_empty">手机号码不能为空</string>
+    <string name="check_mail_empty">邮箱号码不能为空</string>
+    <string name="check_google_empty">谷歌验证码不能为空</string>
+    <string name="check_invite_empty">邀请码不能为空</string>
+    <string name="check_phone_code_empty">手机验证码不能为空</string>
+    <string name="check_mail_code_empty">邮箱验证码不能为空</string>
+    <string name="check_mnemonic_select_empty">您没有将所有的助记词选中，请继续选择</string>
+    <string name="check_mnenotic_select_error">您选中的助记词的顺序不对，请重新选中</string>
+    <string name="check_exchange_count_empty">数量不能为空</string>
+    <string name="check_exchange_count_error">您输入的数量已超过最大数量</string>
+    <string name="check_join_type_error">请选择参与类型</string>
+    <string name="check_address_empty">地址不能为空</string>
+    <string name="check_project_name_empty">项目名称不能为空</string>
+    <string name="check_project_web_empty">官网地址不能为空</string>
+    <string name="check_project_paper_empty">白皮书地址不能为空</string>
+    <string name="check_project_exchange_empty">交易所不能为空</string>
+    <string name="check_project_mail_empty">负责人邮箱号不能为空</string>
+    <string name="check_project_mark_empty">团附介绍不能为空</string>
+    <string name="check_project_coin_empty">请选择币种属性</string>
+    <string name="check_country_empty">请选择国家地区</string>
+    <string name="check_country_error">手机号码和所选地区不匹配</string>
+    <string name="check_small_transfer">最小转账金额 %s</string>
+
+    <!-- 扫一扫相关 -->
+    <string name="qrcode_text">扫一扫</string>
+    <string name="qrcode_tips">将二维码放入框内，即可自动扫描</string>
+    <string name="qrcode_album">相册</string>
+    <string name="qrcode_camera">打开相机出错</string>
+    <string name="qrcode_decode">二维码无法识别</string>
+
+    <!-- 弹层相关 -->
+    <string name="dialog_appointment">预约查询</string>
+    <string name="dialog_appointment_count">预约数量</string>
+    <string name="dialog_appointment_ranking">预约排名</string>
+    <string name="dialog_already_known">我已知晓</string>
+    <string name="dialog_join_type_title">虫洞参与介绍</string>
+    <string name="dialog_join_type_rule">出矿出算力：此方式算力结算时您的矿本和算力收益将实时到钱包。
+\n\n存矿出算力：此方式算力出矿时您的矿本自动存入可提取算力中（可随时提取）矿本可以优先参与下期虫洞，算力收益将实时到钱包。
+\n\n存矿存算力：此方式出矿时您的矿本和算力收益将自动存入可提取算力中，可优先参与下期虫洞，实现复利算力收益（可随时提取）。
+\n\n注：存储的矿本和算力收益均受虫洞系统价值恒定保护，不受二级市场市价影响提取到钱包的矿本和算力收益，均以用户USDT总矿值对应出矿时HS/USDT实时汇率结算等值的HS数量自动到钱包，再次参与虫洞需要按照当前HS/USDT汇率参与。</string>
+    <string name="dialog_login_notice">温馨提示</string>
+    <string name="dialog_logout_content">您的帐号已在别处登录，如非本人操作，请及时重新登录。</string>
+    <string name="dialog_relogin">重新登录</string>
+    <string name="dialog_version_update">版本更新</string>
+    <string name="dialog_update">下载更新</string>
+    <string name="dialog_yuyue_notice">由于本期的参与额度已经用完\n参与成功 %1$s USDT\n参与失败 %2$s USDT\n是否将失败的数量加入预约队列？</string>
+    <string name="dialog_yuyue">预约</string>
+    <string name="dialog_warning_content">Hilbert Space提醒您数字资产是创新型投资产品，请您理性判断，谨慎做出投资决策。</string>
+    <string name="dialog_no_money_password">您还没有设置资金密码，是否前往设置？</string>
+
+    <string-array name="language">
+        <item>@string/language_english</item>
+        <item>@string/language_simplified_chinese</item>
+        <item>@string/language_traditional_chinese</item>
+    </string-array>
+    <string-array name="join_type">
+        <item>@string/state_jin_xi</item>
+        <item>@string/state_xi_no_jin</item>
+        <item>@string/state_no_xi_no_jin</item>
+    </string-array>
+    <string-array name="mingxi_type">
+        <item>@string/state_mingxi_type_all</item>
+        <item>@string/state_mingxi_type_release</item>
+        <item>@string/state_mingxi_type_join</item>
+        <item>@string/state_mingxi_type_exchange</item>
+        <item>@string/state_mingxi_type_extract</item>
+        <item>@string/state_mingxi_type_value</item>
+        <item>@string/state_mingxi_type_dig</item>
+        <item>@string/state_mingxi_type_tui</item>
+        <item>@string/state_mingxi_type_node</item>
+    </string-array>
+    <string-array name="project_type">
+        <item>@string/state_project_daibi</item>
+        <item>@string/state_project_gonglian</item>
+    </string-array>
+</resources>

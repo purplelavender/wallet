@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<share.exchange.framework.widget.MyScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/color_line"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="@string/bind_google_step_one"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/color_line"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="@string/bind_google_step_two"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <ImageView
+            android:id="@+id/iv_key_code"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="--"
+                android:textColor="@color/color_black"
+                android:textSize="16sp"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_key_copy"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/bind_google_copy"
+                android:textColor="@color/tab_selected_color"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="@string/bind_google_step_tag"
+            android:textSize="14sp"
+            android:background="@color/color_line"/>
+
+        <TextView
+            android:id="@+id/tv_next_step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_red_corners"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/bind_google_next_step"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</share.exchange.framework.widget.MyScrollView>

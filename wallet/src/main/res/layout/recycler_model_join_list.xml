@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="15dp">
+    
+    <ImageView
+        android:id="@+id/iv_join_state"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/moshi_icon_suoding"
+        android:background="@drawable/bg_gray_circle_corners"
+        android:scaleType="centerInside"/>
+
+    <TextView
+        android:id="@+id/tv_join_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/state_join_lock"
+        android:textColor="@color/color_black"
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_join_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="14sp"
+            android:textColor="@color/color_black"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/tv_join_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="12sp"
+            android:textColor="@color/color_696969"
+            android:gravity="right"/>
+
+    </LinearLayout>
+
+</LinearLayout>

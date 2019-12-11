@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<share.exchange.framework.widget.MyScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/order_title"
+                android:textColor="@color/color_black"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/et_order_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@null"
+                android:hint="@string/order_title_tag"
+                android:singleLine="true"
+                android:textColor="@color/color_black"
+                android:textColorHint="@color/tab_normal_color"
+                android:textSize="16sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/color_line"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/order_detail"
+                android:textColor="@color/color_black"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_gray_corners"
+            android:minHeight="220dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/et_order_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="left"
+                android:hint="@string/order_detail_tag"
+                android:textColor="@color/color_black"
+                android:textColorHint="@color/tab_normal_color"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/ll_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:id="@+id/iv_one_del"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|top"
+                        android:src="@drawable/state_refuse"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/ll_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:id="@+id/iv_two_del"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|top"
+                        android:src="@drawable/state_refuse"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/ll_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:id="@+id/iv_three_del"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|top"
+                        android:src="@drawable/state_refuse"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/ll_four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:id="@+id/iv_four_del"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|top"
+                        android:src="@drawable/state_refuse"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/ll_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:id="@+id/iv_five_del"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="right|top"
+                        android:src="@drawable/state_refuse"/>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/forgot_mail"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/et_order_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:digits="@string/input_mail"
+            android:background="@null"
+            android:hint="@string/order_mail_tag"
+            android:singleLine="true"
+            android:textColor="@color/color_black"
+            android:textColorHint="@color/tab_normal_color"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_line"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tv_order_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_red_corners"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/order_submit"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</share.exchange.framework.widget.MyScrollView>

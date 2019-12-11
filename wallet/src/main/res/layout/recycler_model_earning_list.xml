@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/iv_earning_state"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_shouyi_chuxi"/>
+
+    <share.exchange.framework.widget.AutoSizeTextView
+        android:id="@+id/tv_earning_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:text="--"
+        android:textColor="@color/color_black"
+        android:textSize="14sp"/>
+
+    <share.exchange.framework.widget.AutoSizeTextView
+        android:id="@+id/tv_earning_award"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:text="--"
+        android:textColor="@color/color_696969"
+        android:textSize="14sp"/>
+
+
+</LinearLayout>

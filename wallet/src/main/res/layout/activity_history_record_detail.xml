@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<share.exchange.framework.widget.MyScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="10dp">
+
+        <share.exchange.framework.widget.CircleImageView
+            android:id="@+id/iv_success"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/icon_chenggong"/>
+
+        <TextView
+            android:id="@+id/tv_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wallet_gathering_success"
+            android:textColor="@color/color_black"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_time"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_type"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_amount"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_fee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_fee"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_fee"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_gathering_address"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <TextView
+                android:id="@+id/tv_gathering"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_fuzhi"
+                android:drawablePadding="10dp"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_transfer_address"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <TextView
+                android:id="@+id/tv_transfer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_fuzhi"
+                android:drawablePadding="10dp"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_hash_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_hash_value"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <TextView
+                android:id="@+id/tv_hash_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_fuzhi"
+                android:drawablePadding="10dp"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_hash_value"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_hash_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_hash_height"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <TextView
+                android:id="@+id/tv_hash_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--"
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_hash_height"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+    </LinearLayout>
+
+</share.exchange.framework.widget.MyScrollView>

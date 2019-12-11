@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/color_line"/>
+
+    <LinearLayout
+        android:id="@+id/ll_bind_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bind_google"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_google_state"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bind_already_bind"
+            android:textColor="@color/tab_normal_color"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_margin="10dp"
+        android:background="@color/color_line"/>
+
+    <LinearLayout
+        android:id="@+id/ll_bind_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bind_phone"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_bind_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="123456789"
+            android:textColor="@color/color_696969"
+            android:textSize="14sp"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_phone_state"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bind_already_bind"
+            android:textColor="@color/tab_normal_color"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_margin="10dp"
+        android:background="@color/color_line"/>
+
+    <LinearLayout
+        android:id="@+id/ll_bind_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bind_mail"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_mail_state"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bind_already_bind"
+            android:textColor="@color/tab_normal_color"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_margin="10dp"
+        android:background="@color/color_line"/>
+
+</LinearLayout>

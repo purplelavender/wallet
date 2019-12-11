@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp">
+
+        <TextView
+            android:id="@+id/tv_left"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/ic_back"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/wallet_history_record"
+            android:textColor="@color/color_black"
+            android:textSize="18sp"/>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/sp_history_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:background="@null"
+            android:scrollbars="none"
+            android:dropDownVerticalOffset="30dp"
+            android:spinnerMode="dropdown"
+            android:layout_marginRight="5dp"/>
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/color_line"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_empty"/>
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/rv_history_record"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+
+</LinearLayout>

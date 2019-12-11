@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_wallet"
+        android:icon="@drawable/navigation_tab_wallet"
+        android:title="@string/main_wallet" />
+    <item
+        android:id="@+id/tab_market"
+        android:icon="@drawable/navigation_tab_market"
+        android:title="@string/main_market" />
+    <item
+        android:id="@+id/tab_model"
+        android:icon="@drawable/navigation_tab_model"
+        android:title="@string/main_model" />
+    <item
+        android:id="@+id/tab_mine"
+        android:icon="@drawable/navigation_tab_mine"
+        android:title="@string/main_mine" />
+</menu>

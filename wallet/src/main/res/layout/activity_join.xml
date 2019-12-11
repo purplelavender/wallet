@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<share.exchange.framework.widget.MyScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/state_mingxi_type_join"
+                android:textColor="@color/color_black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/sp_join_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:scrollbars="none"
+                android:spinnerMode="dropdown"
+                android:dropDownVerticalOffset="6dp"/>
+
+            <ImageView
+                android:id="@+id/iv_type"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/canyu_bangzhu"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_line"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/modle_dig_earning_tag"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:textSize="14sp"
+            android:textColor="@color/color_696969"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_join_dig_earning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/color_black"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/color_line"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:text="@string/modle_dig_count"
+            android:textColor="@color/color_black"
+            android:textSize="14sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_join_dig_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:hint="@string/modle_dig_count_tag"
+                android:textColorHint="@color/tab_normal_color"
+                android:padding="10dp"
+                android:textColor="@color/color_black"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_join_dig_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/wallet_all"
+                android:textSize="14sp"
+                android:textColor="@color/tab_selected_color"
+                android:layout_marginRight="10dp"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_need_dig_usdt"
+                android:textSize="14sp"
+                android:textColor="@color/color_696969"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_join_need_dig_usdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="right"
+                android:textSize="14sp"
+                android:textColor="@color/color_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_release_dig_usdt"
+                android:textSize="14sp"
+                android:textColor="@color/color_696969"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_join_release_dig_usdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="right"
+                android:textSize="14sp"
+                android:textColor="@color/color_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_benjin_dig_usdt"
+                android:textSize="14sp"
+                android:textColor="@color/color_696969"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:id="@+id/tv_join_benjin_dig_usdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="right"
+                android:textSize="14sp"
+                android:textColor="@color/color_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_pause_time"
+                android:textSize="14sp"
+                android:textColor="@color/color_696969"/>
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/modle_join_pause_time"
+                android:gravity="right"
+                android:textSize="14sp"
+                android:textColor="@color/color_black"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_join_sure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_red_corners"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/bind_sure"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_join_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/dialog_appointment"
+            android:textColor="@color/color_696969"
+            android:textSize="14sp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</share.exchange.framework.widget.MyScrollView>

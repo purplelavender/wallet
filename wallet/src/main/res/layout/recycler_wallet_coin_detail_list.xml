@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/iv_record_type"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_whitegray_circle_corners"
+        android:scaleType="centerInside"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_record_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textColor="@color/color_black"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_record_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textColor="@color/color_04041D"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:ellipsize="middle"/>
+
+    </LinearLayout>
+
+    <share.exchange.framework.widget.AutoSizeTextView
+        android:id="@+id/tv_record_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:text="--"
+        android:textColor="@color/color_black"
+        android:textSize="16sp"/>
+
+
+</LinearLayout>

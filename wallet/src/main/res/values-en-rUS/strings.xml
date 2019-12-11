@@ -1,0 +1,436 @@
+<resources>
+    <string name="app_name">Hilbert Space</string>
+
+    <string name="main_wallet">Wallet</string>
+    <string name="main_market">Market</string>
+    <string name="main_model">HS Space</string>
+    <string name="main_mine">Mine</string>
+
+    <string name="country_search">Search</string>
+    <string name="assets_section_close">Close</string>
+    <string name="assets_section_expend">Expend</string>
+
+    <!-- interface success -->
+    <string name="interface_login_success">Login Success</string>
+    <string name="interface_regist_success">Register Success</string>
+    <string name="interface_send_success">Send Success</string>
+    <string name="interface_change_success">Change Success</string>
+    <string name="interface_exchange_success">Exchange Success</string>
+    <string name="interface_join_success">Join Success</string>
+    <string name="interface_value_success">Amplification Value Success</string>
+    <string name="interface_extract_success">Extract Success</string>
+    <string name="interface_transfer_success">Transfer Success</string>
+    <string name="interface_add_success">Add Success</string>
+    <string name="interface_reply_success">Reply Success</string>
+    <string name="interface_bind_success">Bind Success</string>
+    <string name="interface_version_new">It is the latest version</string>
+    <string name="interface_down_failed">Download error, please check the network connection status and mobile phone memory space</string>
+    <string name="interface_yuyue_success">Make an appointment success</string>
+    <string name="interface_upload_photo">Loading&#8230;</string>
+    <string name="interface_delete_success">Delete Success</string>
+    <string name="interface_no_yuyue">You have no reservation to queue</string>
+    <string name="interface_in_yuyue">You are currently in the reservation queue, please do not repeat!</string>
+    <string name="interface_copy_success">Copy Success</string>
+
+    <!-- interface error -->
+    <string name="interface_error_yichang">Unknown exception, please contact administrator</string>
+    <string name="interface_error_nocunzai">User does not exist</string>
+    <string name="interface_error_passworderror">Password mistake</string>
+    <string name="interface_error_success">The request is successful</string>
+    <string name="interface_error_noworkorder">Not their own work order, can not end</string>
+    <string name="interface_error_nooldpassword">Original password error</string>
+    <string name="interface_error_nopassword">Password mistake</string>
+    <string name="interface_error_nologinpassword">Login password error</string>
+    <string name="interface_error_nocodes">Please confirm the invitation code</string>
+    <string name="interface_error_noaddress">The address does not match you, please confirm</string>
+    <string name="interface_error_exchange">For successful</string>
+    <string name="interface_error_zeroparticipate">The participation amount cannot be 0</string>
+    <string name="interface_error_noavailabs">Shortage of available funds</string>
+    <string name="interface_error_nominables">The available quantity is insufficient</string>
+    <string name="interface_error_nocode">The invitation code does not exist</string>
+    <string name="interface_error_zerocapital">The withdrawal amount cannot be 0</string>
+    <string name="interface_error_nocapital">Insufficient funds available</string>
+    <string name="interface_error_getcodes">Please get the verification code first</string>
+    <string name="interface_error_codesno">The captcha is incorrect, please re-enter it</string>
+    <string name="interface_error_cophone">The original cell phone number was entered incorrectly</string>
+    <string name="interface_error_nozhujici">Mnemonic error</string>
+    <string name="interface_error_oldnewpassword">The new password cannot be the same as the original password</string>
+    <string name="interface_error_gucodes">Google verification code error</string>
+    <string name="interface_error_phonecodes">Mobile phone verification code error</string>
+    <string name="interface_error_emailcodes">Email verification code error</string>
+    <string name="interface_error_duishuliang">The exchange quantity cannot be 0</string>
+    <string name="interface_error_duixiaoyu">The exchange quantity cannot be less than 0</string>
+    <string name="interface_error_yue">Your balance is insufficient</string>
+    <string name="interface_error_tibierror">Mention money failed</string>
+    <string name="interface_error_yuyue">You have an appointment and cannot continue</string>
+    <string name="interface_error_yuyuejine">The reservation amount cannot be 0</string>
+    <string name="interface_error_exchange_zero">The exchange quantity cannot be 0</string>
+    <string name="interface_error_value_zero">Value magnification quantity cannot be 0</string>
+    <string name="interface_error_join_zero">The number of digs cannot be 0</string>
+    <string name="interface_error_extract_zero">The extracted quantity cannot be 0</string>
+    <string name="interface_error_send_code">Failed to send verification code</string>
+    <string name="interface_error_phone_alread_bind">The phone number has been bound</string>
+    <string name="interface_error_mail_alread_bind">The mailbox is already bound</string>
+    <string name="interface_error_upload">Upload Failed</string>
+    <string name="interface_error_yuyue_time">Node broadcast throughout the network, please wait and participate</string>
+    <string name="interface_error_exchange_one">The minimum redemption quantity is 1</string>
+    <string name="interface_error_value_one">The minimum number of magnifications is 1</string>
+    <string name="interface_error_extract_one">The minimum fetch quantity is 1</string>
+    <string name="interface_error_join_one">The minimum amount of mining is 1</string>
+
+    <!-- 我的 -->
+    <string name="mine_uid">UID：%s</string>
+    <string name="mine_money">Forces Details</string>
+    <string name="mine_my_group">My Community</string>
+    <string name="mine_invite">Invited To Share</string>
+    <string name="mine_project_apply">Project Application</string>
+    <string name="mine_safe_bind">Security Bindings</string>
+    <string name="mine_password_manager">Password Management</string>
+    <string name="mine_language">Language Switch</string>
+    <string name="mine_work_order">System Work Order</string>
+    <string name="mine_check_version">Check The Version</string>
+    <string name="mine_login_out">Log Out</string>
+
+    <!-- 项目申请 -->
+    <string name="project_apply_list">Apply For List</string>
+    <string name="project_apply_title">《Project Application Provisions》</string>
+    <string name="project_apply_agree">I Agree</string>
+    <string name="project_coin_attribute">Currency Attribute</string>
+    <string name="project_name">Project Name</string>
+    <string name="project_name_tag">Please enter the project name</string>
+    <string name="project_web_address">Website Address</string>
+    <string name="project_web_address_tag">Please enter the official website address</string>
+    <string name="project_paper_address">White Paper Address</string>
+    <string name="project_paper_address_tag">Please enter white paper address</string>
+    <string name="project_exchange">Shelf Exchange</string>
+    <string name="project_exchange_tag">Please enter the name of the listed exchange</string>
+    <string name="project_guarantor">Guarantor</string>
+    <string name="project_guarantor_tag">Please enter guarantor</string>
+    <string name="project_guarantor_phone">Phone Number</string>
+    <string name="project_guarantor_phone_tag">Please enter the telephone number of the person in charge</string>
+    <string name="project_guarantor_wx">WeChat ID/Telegram</string>
+    <string name="project_guarantor_wx_tag">Please enter the WeChat ID/telegram in use</string>
+    <string name="project_guarantor_mail">Email Address</string>
+    <string name="project_guarantor_mail_tag">Please enter the email number of the person in charge</string>
+    <string name="project_guarantor_detail">Group Attached</string>
+    <string name="project_guarantor_detail_tag">Please enter its additional description</string>
+    <string name="project_submit_apply">Submit</string>
+
+    <!-- 绑定相关 -->
+    <string name="bind_google">Bind Google</string>
+    <string name="bind_phone">Bind Phone</string>
+    <string name="bind_mail">Bind Email</string>
+    <string name="bind_already_bind">Is Binded</string>
+    <string name="bind_go_bind">Go Binding</string>
+    <string name="bind_go_change">Change</string>
+    <string name="bind_login_password">Login Password</string>
+    <string name="bind_login_password_tag">Please enter your login password</string>
+    <string name="bind_phone_num">Phone Number</string>
+    <string name="bind_phone_num_tag">Please enter the phone number to bind</string>
+    <string name="bind_sms_code">Message Code</string>
+    <string name="bind_get_sms_code">Get Code</string>
+    <string name="bind_sure">Confirm</string>
+    <string name="bind_mail_num">Email Number</string>
+    <string name="bind_mail_num_tag">Please enter the email number to bind</string>
+    <string name="bind_mail_code">Email Code</string>
+    <string name="bind_google_step_one">Search the "Google Authenticator" app in the app store and download it.</string>
+    <string name="bind_google_step_two">After the installation, open the Google Authenticator, click "+" in the upper right corner (android is the lower right corner), and select "manually enter the secret key". Fill in your account name and the secret key below in the page.</string>
+    <string name="bind_google_step_three">After successful addition, you will get a 6-digit captcha with a certain time limit. Please fill in the input box below (the captcha time limit is required).</string>
+    <string name="bind_google_code">Google Code</string>
+    <string name="bind_google_code_tag">Please enter Google verification code</string>
+    <string name="bind_google_copy">Copy</string>
+    <string name="bind_google_next_step">Next</string>
+    <string name="bind_google_step_tag">Copy the secret key or screenshot to save, there may be security risks, please properly save</string>
+    <string name="bind_change_phone">Change Phone</string>
+    <string name="bind_old_phone_tag">Please enter the phone number already bound</string>
+    <string name="bind_new_phone_tag">Please enter the new mobile phone number</string>
+    <string name="bind_google_rqcode_error">Failure to generate qr code</string>
+    <string name="bind_send_success">Verification code sent successfully</string>
+    <string name="bind_get_code_again">Get Code Again</string>
+    <string name="bind_change_success">Change Success</string>
+    <string name="bind_setting_success">Setting Success</string>
+    <string name="bind_phone_country">China (+86)</string>
+    <string name="bind_phone_select_country">Select Country</string>
+
+    <!-- 密码相关 -->
+    <string name="password_money_password">Fund Password</string>
+    <string name="password_go_setting">Go Changing</string>
+    <string name="password_change_password_title">Change Login Password</string>
+    <string name="password_old_password">Old Password</string>
+    <string name="password_old_password_tag">Please enter your login password</string>
+    <string name="password_new_password">New Password</string>
+    <string name="password_new_password_tag">Please enter your 6~16 digit password</string>
+    <string name="password_sure_password">Confirm Password</string>
+    <string name="password_sure_password_tag">Please enter your confirmation password</string>
+    <string name="password_money_password_tag">Please enter 6~16 digit fund password</string>
+    <string name="password_zhujici_find">Mnemonic</string>
+
+    <!-- 语言 -->
+    <string name="language_simplified_chinese">简体中文</string>
+    <string name="language_traditional_chinese">繁體中文</string>
+    <string name="language_english">English</string>
+    <string name="language_wait">Stay Tuned For</string>
+
+    <!-- 工单 -->
+    <string name="order_new">Create Work Order</string>
+    <string name="order_title">Title</string>
+    <string name="order_title_tag">Please enter title</string>
+    <string name="order_detail">Problem Details</string>
+    <string name="order_detail_tag">Please describe your problem in detail</string>
+    <string name="order_reply">Reply</string>
+    <string name="order_service_reply">Customer Reply</string>
+    <string name="order_reply_order">Reply Work Order</string>
+    <string name="order_close">End Work Order</string>
+    <string name="order_submit">Submit</string>
+    <string name="order_mail_tag">Please enter the email number for receiving feedback</string>
+
+    <!-- 邀请相关 -->
+    <string name="invite_share">Share</string>
+    <string name="invite_save">Save</string>
+    <string name="invite_join">%s invite you to join the Hilbert Space</string>
+    <string name="invite_my_code">My Invitation Code</string>
+    <string name="invite_click_copy">Copy Invitation Code</string>
+    <string name="invite_sao_qrcode">Scan QR Code</string>
+    <string name="invite_regist_down">Register and download the Hilbert Space</string>
+    <string name="invite_regist_down_tag">Infinite dimensional uncentered formula economic mapping space</string>
+    <string name="invite_save_qrcode">Save</string>
+
+    <!-- 登录注册相关 -->
+    <string name="login">Login</string>
+    <string name="login_name">Name</string>
+    <string name="login_name_tag">Please enter your custom account</string>
+    <string name="login_password">Password</string>
+    <string name="login_password_tag">Please enter password</string>
+    <string name="login_forgot_password">Forgot Password</string>
+    <string name="login_regist">Register</string>
+    <string name="login_agree_service">Login means reading and agreeing to the service agreement</string>
+    <string name="regist">Register</string>
+    <string name="regist_sure">Register</string>
+    <string name="regist_name_tag">Please enter 6~16 bit custom account</string>
+    <string name="regist_sure_tag">Please enter your password again</string>
+    <string name="regist_invite_code">Invitation Code</string>
+    <string name="regist_invite_code_tag">Please enter the invitation code</string>
+    <string name="regist_agree_service">Register means reading and agreeing to the service agreement</string>
+    <string name="forgot_phone_mail">Phone/Email</string>
+    <string name="forgot_bind_phone_mail">Binding Account</string>
+    <string name="forgot_bind_phone_mail_tag">Please enter the binding phone number/email</string>
+    <string name="forgot_code">Verification Code</string>
+    <string name="forgot_code_tag">Please enter verification code</string>
+    <string name="forgot_sure_change">Confirm</string>
+    <string name="forgot_google">Google</string>
+    <string name="forgot_paste">Paste</string>
+    <string name="regist_risk_warning">Risk Warning</string>
+    <string name="regist_agree_and_regist">Register</string>
+    <string name="regist_name_error">(the user name has been registered)</string>
+    <string name="regist_mark_mnemonic_word">Back Up Mnemonic Words</string>
+    <string name="regist_mark_mnemonic_word_tag">Please copy it exactly onto the paper and keep it in the safety belt where only you know it.</string>
+    <string name="regist_check_mnemonic_word">Verify The Mnemonic</string>
+    <string name="regist_check_mnemonic_word_tag">Please click to fill in your mnemonics in order to make sure your mnemonics are correct.</string>
+    <string name="forgot_mnemonic_password">Please click in order to fill in your mnemonics, separated by a comma ", ".</string>
+    <string name="forgot_mnemonic">Mnemonics</string>
+    <string name="forgot_phone">Phone</string>
+    <string name="forgot_mail">EMail</string>
+    <string name="forgot_bind_phone">Bind Phone</string>
+    <string name="forgot_bind_phone_tag">Please enter the phone number of the binding</string>
+    <string name="forgot_bind_mail">Bind Email</string>
+    <string name="forgot_bind_mail_tag">Please enter the binding email number</string>
+
+    <!-- 钱包相关 -->
+    <string name="wallet_history_record">History</string>
+    <string name="wallet_all_assets">Total Assets(USDT)</string>
+    <string name="wallet_about">≈ %s</string>
+    <string name="wallet_all">All</string>
+    <string name="wallet_in">Turn In</string>
+    <string name="wallet_out">Turn Out</string>
+    <string name="wallet_gathering">Gathering</string>
+    <string name="wallet_gathering_success">Gathering Success</string>
+    <string name="wallet_gathering_address">Gathering Address</string>
+    <string name="wallet_transfer">Transfer</string>
+    <string name="wallet_transfer_success">Transfer Success</string>
+    <string name="wallet_transfer_address">Transfer Address</string>
+    <string name="wallet_time">Date</string>
+    <string name="wallet_type">Type</string>
+    <string name="wallet_amount">Amount</string>
+    <string name="wallet_fee">Cost Of Miners</string>
+    <string name="wallet_mark">Remark</string>
+    <string name="wallet_mark_tag">Optional</string>
+    <string name="wallet_count">Count</string>
+    <string name="wallet_balance">Balance:</string>
+    <string name="wallet_address_ben">Address Book</string>
+    <string name="wallet_add_address">Add Address</string>
+    <string name="wallet_add_address_tag">Enter or long press the paste address</string>
+    <string name="wallet_fee_detail">Payment Details</string>
+    <string name="wallet_order_info">Order Information</string>
+    <string name="wallet_safe_check">Security Verification</string>
+    <string name="wallet_send">Send</string>
+    <string name="wallet_cancel">Cancel</string>
+    <string name="wallet_gathering_rule">Note :\n Please do not transfer any assets other than %1$s to the above address, otherwise it will not be retrieved. \n After transferring to the above address, 12 networks are required to confirm the account. \n The minimum transfer amount is 1%2$s, and less than 1%3$s will not be credited. \n Make sure that the network environment is secure to prevent information from being leaked.</string>
+    <string name="wallet_transfer_rule">Note :\n The minimum transfer amount is %1$s %2$s.\n Please check your payment address when transferring money, check the security of the network environment, and prevent information from being leaked.</string>
+    <string name="wallet_hash_value">Hash Value</string>
+    <string name="wallet_hash_height">Block Height</string>
+
+    <!-- 模式相关 -->
+    <string name="modle_project">Mobius Transform</string>
+    <string name="modle_award_pool">Bonus Pool</string>
+    <string name="modle_released_earning">Released Assets(USDT)</string>
+    <string name="modle_dig_earning">Mobius Transformation %s USDT</string>
+    <string name="modle_dig_earning_tag">Mobius Transformation(USDT)</string>
+    <string name="modle_available_assets">Transformed Consensus(USDT)</string>
+    <string name="modle_drawable_principal">Extractable Forces(USDT)</string>
+    <string name="modle_exchange">Exchange</string>
+    <string name="modle_value_add_title">Amplification</string>
+    <string name="modle_value_add">Amplification</string>
+    <string name="modle_join">Wormhole</string>
+    <string name="modle_extract">Extract</string>
+    <string name="modle_join_record">Join Record</string>
+    <string name="modle_release_record">Forces Output</string>
+    <string name="modle_exchange_rate">Rate</string>
+    <string name="modle_destruction">Destruction</string>
+    <string name="modle_lock">Lock</string>
+    <string name="modle_dig_count">Dig Count</string>
+    <string name="modle_dig_count_tag">Please enter the number of digs USDT</string>
+    <string name="modle_need_dig_usdt">Required Consensus Conversion(USDT)</string>
+    <string name="modle_release_dig_usdt">Transformed Consensus(USDT)</string>
+    <string name="modle_benjin_dig_usdt">Available Forces(USDT)</string>
+    <string name="modle_pause_time">Cycle Time</string>
+    <string name="modle_total_amount">Total Withdrawal(%s)</string>
+    <string name="modle_buy_count">Buy Count</string>
+    <string name="modle_get_count">Received Count</string>
+    <string name="modle_value_add_notice">Rule for value amplification of wormhole system: \n wormhole system users can amplify the original Token value by 10 times through the cooperative third-party Token, and release 0.5% every day. \n the accumulative value of released assets does not return to zero, and the release of assets requires the conversion of output through the wormhole system POA mining mechanism 1:10 (T+5) consensus!</string>
+    <string name="modle_exchange_count">Exchange Count</string>
+    <string name="modle_extract_count">Extract Count</string>
+    <string name="modle_extract_count_tag">Please enter the amount of forces to be withdrawn</string>
+    <string name="modle_extract_total">Total Forces(HS)</string>
+    <string name="modle_now_rate">Current Rate</string>
+    <string name="modle_destruction_pool">Destruction Pool</string>
+    <string name="modle_destruction_rule">Destruction Pool Rule</string>
+    <string name="modle_award_rule">Bonus Pool Rule</string>
+    <string name="modle_available_pcs">Available(%s)</string>
+    <string name="modle_join_pause_time">T + 5</string>
+    <string name="modle_list_count">Count(%s)</string>
+    <string name="modle_list_exchange_count">Exchange Count(USDT)</string>
+    <string name="modle_list_buy_count">Buy Count(%s)</string>
+    <string name="modle_list_value_count">Zoom Value(USDT)</string>
+    <string name="modle_list_join_type">Join Type</string>
+    <string name="modle_list_join_count">Join Count(USDT)</string>
+    <string name="modle_list_dig_count">Unlock Consensus(USDT)</string>
+    <string name="modle_list_extract_count">Extract Count(USDT)</string>
+    <string name="modle_list_account_count">Account Count(%s)</string>
+    <string name="modle_award_total">Total number of bonus pool</string>
+    <string name="modle_destruction_total">Total number of destruction pool</string>
+    <string name="modle_earning_join">Consensus Participate</string>
+    <string name="modle_earning_m_exchange">Mobius Transformation</string>
+    <string name="modle_earning_award_pool">Protected Fund Deduction</string>
+    <string name="modle_earning_destruction_pool">Black Holes Destroy</string>
+    <string name="modle_earning_in_wallet">Into Wallet</string>
+    <string name="modle_earning_save_benjin">Save Forces</string>
+
+    <!-- 行情 -->
+    <string name="market_name">Name</string>
+    <string name="market_now_price">New Price</string>
+    <string name="market_up_down">Price Limit</string>
+
+    <!-- 社群相关 -->
+    <string name="group_node_one">Star 1 Node</string>
+    <string name="group_node_two">Star 2 Node</string>
+    <string name="group_node_three">Star 3 Node</string>
+    <string name="group_node_four">Star 4 Node</string>
+    <string name="group_node_five">Star 5 Node</string>
+    <string name="group_persional_join_earning">Personal Join Forces(USDT)</string>
+    <string name="group_total_num">Total Number</string>
+    <string name="group_total_earning_pcs">Community Total Forces(HS)</string>
+    <string name="group_total_earning_usdt">Community Total Forces(USDT)</string>
+    <string name="group_friend">Community Members</string>
+    <string name="group_look_friend">Check Members</string>
+    <string name="group_today_earning">Today Join(USDT)</string>
+    <string name="group_today_total_earning">Community Join(USDT)</string>
+    <string name="group_total_award">Total Earnings(USDT)</string>
+    <string name="group_earning_info">Forces Info</string>
+    <string name="group_invite_earning">Invite Earnings</string>
+    <string name="group_node_earning">Node Forces</string>
+    <string name="group_node_total_earning">Node Total Forces(HS)</string>
+    <string name="group_tui_total_earning">Promote Total Forces(HS)</string>
+
+    <!-- 各种列表状态，下拉展示 -->
+    <string name="state_order_reply">Await</string>
+    <string name="state_order_end">End</string>
+    <string name="input_num_letter">1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+    <string name="input_mail">1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM.+-/*!#$%^_=,@</string>
+    <string name="input_num_point">1234567890.</string>
+    <string name="state_join_lock">Lock</string>
+    <string name="state_join_release">Output</string>
+    <string name="state_jin_xi">Out Mine And Power</string>
+    <string name="state_xi_no_jin">Deposit Out Power</string>
+    <string name="state_no_xi_no_jin">Deposit And Power</string>
+    <string name="state_mingxi_type_all">All</string>
+    <string name="state_mingxi_type_release">Forces Output</string>
+    <string name="state_mingxi_type_join">Wormhole Join</string>
+    <string name="state_mingxi_type_exchange">Exchange</string>
+    <string name="state_mingxi_type_extract">Extract</string>
+    <string name="state_mingxi_type_value">Amplification Value</string>
+    <string name="state_mingxi_type_dig">Release Assets</string>
+    <string name="state_mingxi_type_tui">Promote Forces</string>
+    <string name="state_mingxi_type_node">Node Forces</string>
+    <string name="state_project_daibi">token</string>
+    <string name="state_project_gonglian">Male Chain</string>
+    <string name="state_project_success">Success</string>
+    <string name="state_project_wait">Await</string>
+    <string name="state_project_failed">Failure</string>
+
+    <!-- 各种输入验证提示 -->
+    <string name="check_name_empty">The account cannot be empty</string>
+    <string name="check_name_length">The account length cannot be less than 6 digits, or more than 16 digits</string>
+    <string name="check_password_empty">The password cannot be empty</string>
+    <string name="check_password_length">Password length cannot be less than 6 bits, cannot be greater than 16 bits</string>
+    <string name="check_password_sure">The two passwords did not match</string>
+    <string name="check_phone_empty">The cell phone number cannot be empty</string>
+    <string name="check_mail_empty">The email number cannot be empty</string>
+    <string name="check_google_empty">Google captcha cannot be empty</string>
+    <string name="check_invite_empty">The invitation code cannot be empty</string>
+    <string name="check_phone_code_empty">Mobile phone verification code cannot be empty</string>
+    <string name="check_mail_code_empty">The email verification code cannot be empty</string>
+    <string name="check_mnemonic_select_empty">You did not select all mnemonic words, please continue to select</string>
+    <string name="check_mnenotic_select_error">The mnemonic you selected is not in the right order, please re-select it</string>
+    <string name="check_exchange_count_empty">The quantity cannot be empty</string>
+    <string name="check_exchange_count_error">The quantity you entered exceeded the maximum quantity</string>
+    <string name="check_join_type_error">Please select participation type</string>
+    <string name="check_address_empty">The address cannot be empty</string>
+    <string name="check_project_name_empty">The project name cannot be empty</string>
+    <string name="check_project_web_empty">The official website address cannot be empty</string>
+    <string name="check_project_paper_empty">White paper address cannot be empty</string>
+    <string name="check_project_exchange_empty">The exchange cannot be empty</string>
+    <string name="check_project_mail_empty">The email number of the person in charge cannot be empty</string>
+    <string name="check_project_mark_empty">Group introduction cannot be empty</string>
+    <string name="check_project_coin_empty">Please select the currency attribute</string>
+    <string name="check_country_empty">Please select country region</string>
+    <string name="check_country_error">The phone number does not match the selected area</string>
+    <string name="check_small_transfer">Minimum transfer amount %s</string>
+
+    <!-- 扫一扫相关 -->
+    <string name="qrcode_text">Scan</string>
+    <string name="qrcode_tips">Put the qr code into the box, it can be automatically scanned</string>
+    <string name="qrcode_album">Album</string>
+    <string name="qrcode_camera">Error opening camera</string>
+    <string name="qrcode_decode">Qr code cannot be recognized</string>
+
+    <!-- 弹层相关 -->
+    <string name="dialog_appointment">Appointment Query</string>
+    <string name="dialog_appointment_count">Appointment Count</string>
+    <string name="dialog_appointment_ranking">Appointment Ranking</string>
+    <string name="dialog_already_known">I Known</string>
+    <string name="dialog_join_type_title">Wormhole Participation Introduction</string>
+    <string name="dialog_join_type_rule">Out mine and power: When mining power is settled in this way, your mining capital and computing power income will be real-time to the wallet.
+ \n\n Deposit out power: In this method, when the mining power is mined, your mine is automatically stored in the extractable hash power (can be extracted at any time). The mine can preferentially participate in the next wormhole.
+ \n\n Deposit and power: When mining in this way, your mineral capital and computing power income will be automatically stored in the extractable computing power, and you can preferentially participate in the next wormhole to achieve compound interest computing power income (can be extracted at any time).
+ \n\n Note: The stored mining capital and computing power income are constantly protected by the value of the wormhole system. The mining capital and computing power income from the wallet are not affected by the market price of the secondary market, which are corresponding to the user total USDT mining value. When mining, the HS / USDT real-time exchange rate settlement equivalent amount of HS is automatically transferred to the wallet, and re-entry into the wormhole requires participation at the current HS / USDT exchange rate.</string>
+    <string name="dialog_login_notice">Warm Prompt</string>
+    <string name="dialog_logout_content">Your account has been logged in somewhere else. If it is not operated by you, please log in again.</string>
+    <string name="dialog_relogin">Log Back In</string>
+    <string name="dialog_version_update">Version Update</string>
+    <string name="dialog_update">Update</string>
+    <string name="dialog_yuyue_notice">Because the enrollment quota for this period has been used up \n enrollment success %1$s USDT\n enrollment failure %2$s USDT\n will the number of failures be added to the reservation queue?</string>
+    <string name="dialog_yuyue">Appointment</string>
+    <string name="dialog_warning_content">Hilbert Space reminds you that digital assets are innovative investment products. Please use rational judgment and make careful investment decisions.</string>
+    <string name="dialog_no_money_password">You have not set the fund password, do you want to go to the Settings?</string>
+
+</resources>

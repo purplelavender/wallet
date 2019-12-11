@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_tool_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_tool_return"/>
+
+        <share.exchange.framework.widget.ClearEditText
+            android:id="@+id/et_searchcode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/edittext_blue_selecter"
+            android:hint="@string/country_search"
+            android:imeOptions="actionSearch"
+            android:maxLength="32"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:cursorVisible="true"
+            android:textColor="@color/color_title"
+            android:textColorHint="@color/color_line"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_line"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:splitMotionEvents="false"/>
+
+        <TextView
+            android:id="@+id/txt_letter"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_gray_corners"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:visibility="invisible"/>
+
+        <share.exchange.framework.widget.QuickIndexBar
+            android:id="@+id/index_bar"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|right"/>
+
+    </FrameLayout>
+
+</LinearLayout>
