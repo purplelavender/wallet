@@ -152,9 +152,13 @@ public class BigDecimalUtils {
         if (scale < 0) {
             throw new IllegalArgumentException("保留的小数位数必须大于零");
         }
-        BigDecimal b1 = new BigDecimal(StringUtil.isZero(v1) ? "0" : v1);
-        BigDecimal b2 = new BigDecimal(StringUtil.isZero(v2) ? "0" : v2);
-        return format(b1.divide(b2, scale, BigDecimal.ROUND_DOWN), scale);
+        if(StringUtil.isZero(v1) || StringUtil.isZero(v2)) {
+            return "0";
+        } else {
+            BigDecimal b1 = new BigDecimal(v1);
+            BigDecimal b2 = new BigDecimal(v2);
+            return format(b1.divide(b2, scale, BigDecimal.ROUND_DOWN), scale);
+        }
     }
 
     /**
@@ -270,7 +274,32 @@ public class BigDecimalUtils {
                     result = format.format(decimal);
                     break;
             }
-            return result;
+            return formatServiceNumber(result);
         }
+    }
+
+    /**
+     * 将科学计数法转成正常显示的数字
+     * @param number
+     * @return
+     */
+    public static String formatServiceNumber(double number) {
+        return formatServiceNumber(number + "");
+    }
+
+    public static String formatServiceNumber(String number) {
+        BigDecimal b = new BigDecimal(number + "");
+        return b.toPlainString();
+    }
+
+    /**
+     * 判断输入的是否是小数并且位数大于8
+     * @param number
+     * @return
+     */
+    public static boolean isEightPoint(String number) {
+        int length = number.length();
+        int index = number.indexOf(".");
+        return index > 0 && length - index > 9;
     }
 }

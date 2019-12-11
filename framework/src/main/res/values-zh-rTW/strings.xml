@@ -1,0 +1,39 @@
+<resources>
+    <string name="market_tips">公告</string>
+    <string name="is_loading">加載中&#8230;</string>
+    <string name="no_network">網絡不通暢，請稍後再試</string>
+    <string name="no_login">您的賬號在別處登錄，如非本人操作請及時修改密碼</string>
+    <string name="goto_login">立即登錄</string>
+    <string name="re_loading">重新加載</string>
+    <string name="no_result">暫無記錄</string>
+
+    <!--permission strings-->
+    <string name="permission_deny_again_title">權限設置</string>
+    <string name="permission_deny_again_positive">設置</string>
+    <string name="permission_deny_again_nagative">取消</string>
+    <string name="permission_not_ask_again">必備權限被拒絕，請打開設置開啟相應權限</string>
+    <string name="permission_deny_tip">權限被拒絕，需要設置此權限才能正常使用該功能</string>
+    <string name="permission_sd_card_not_available">SD卡不可用</string>
+    <string name="permission_app_start">請允許應用獲取下列權限以獲得更好的用戶體驗:\n獲取設備ID和定位用作推送\n緩存一些信息到SD卡</string>
+    <string name="permission_app_storage">請允許應用獲取下列權限以獲得更好的用戶體驗:\n緩存一些信息到SD卡</string>
+    <string name="permission_app_microphone">請允許應用獲取下列權限以獲得更好的用戶體驗:\n麥克風使用</string>
+    <string name="permission_app_photo">請允許應用獲取下列權限以獲得更好的用戶體驗:\n訪問您存儲設備上的照片以及攝像頭使用</string>
+    <string name="permission_app_camera">請允許應用獲取下列權限以獲得更好的用戶體驗:\n攝像頭使用</string>
+    <string name="permission_app_local_video">請允許應用獲取下列權限以獲得更好的用戶體驗:\n訪問您存儲設備上的視頻</string>
+    <string name="permission_app_storage_audio">請允許應用獲取下列權限以獲得更好的用戶體驗:\n訪問您的SD卡及麥克風使用</string>
+    <string name="permission_app_location">請允許應用獲取下列權限以獲得更好的用戶體驗:\n獲取您的定位信息和GPS權限</string>
+
+    <string name="all_images">全部圖片</string>
+    <string name="folder_image_count">共%1$d張</string>
+    <string name="preview_image_count">%1$d/%2$d</string>
+    <string name="select_limit">最多選擇%1$d張圖片</string>
+    <string name="complete">完成</string>
+    <string name="select_complete">完成(%1$d/%2$d)</string>
+    <string name="preview_count">預覽(%1$d)</string>
+    <string name="photo_select">圖片選擇</string>
+    <string name="photo_crop">圖片裁剪</string>
+    <string name="origin">原圖</string>
+    <string name="select">選擇</string>
+    <string name="origin_size">原圖(%s)</string>
+    <string name="photo_graph">拍攝圖片</string>
+</resources>

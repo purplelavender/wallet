@@ -150,13 +150,13 @@ public class UploadBuilder extends BaseHasParamRequestBuilder<UploadBuilder> {
         return contentType;
     }
 
-    private void appendParams(MultipartBody.Builder builder, Map<String, String> params) {
+    private void appendParams(MultipartBody.Builder builder, Map<String, Object> params) {
         if (params != null && !params.isEmpty()) {
             for (String key :
                     params.keySet()) {
                 if (params.get(key) != null) {
                     builder.addPart(Headers.of("Content-Disposition", "form-data; name=\"" + key + "\""),
-                            RequestBody.create(null, params.get(key)));
+                            RequestBody.create(null, params.get(key).toString()));
                 }
             }
         }

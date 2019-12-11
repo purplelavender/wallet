@@ -5,18 +5,11 @@ import java.io.Serializable;
 /**
  * Created by MMM on 2018/01/24.
  */
-public class BaseBean implements Serializable {
+public class BaseBean<T> implements Serializable {
 
-    private int status;
     private String msg;
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
+    private int code;
+    private T data;
 
     public String getMsg() {
         return msg;
@@ -24,5 +17,21 @@ public class BaseBean implements Serializable {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }

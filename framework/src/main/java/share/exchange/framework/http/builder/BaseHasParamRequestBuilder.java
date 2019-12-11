@@ -12,7 +12,7 @@ import share.exchange.framework.http.OkDroid;
 public abstract class BaseHasParamRequestBuilder
         <T extends BaseHasParamRequestBuilder> extends BaseRequestBuilder<T> {
 
-    protected Map<String, String> mParams;
+    protected Map<String, Object> mParams;
 
     public BaseHasParamRequestBuilder(OkDroid mOkDroid) {
         super(mOkDroid);
@@ -24,7 +24,7 @@ public abstract class BaseHasParamRequestBuilder
      * @param params
      * @return
      */
-    public T params(Map<String, String> params) {
+    public T params(Map<String, Object> params) {
         this.mParams = params;
         return (T) this;
     }
@@ -36,7 +36,7 @@ public abstract class BaseHasParamRequestBuilder
      * @param value
      * @return
      */
-    public T addParam(String key, String value) {
+    public T addParam(String key, Object value) {
         if (this.mParams == null) {
             this.mParams = new HashMap<>();
         }

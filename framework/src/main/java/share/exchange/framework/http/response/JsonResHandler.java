@@ -12,7 +12,7 @@ import share.exchange.framework.http.OkDroid;
  * Created by MMM on 2018/1/10.
  * e_mail：xiaoexiao51@163.com
  */
-public abstract class JsonResHandler<T> implements IResponseHandler {
+public abstract class JsonResHandler implements IResponseHandler {
 
     @Override
     public final void onSuccess(final Response response) {
@@ -35,11 +35,24 @@ public abstract class JsonResHandler<T> implements IResponseHandler {
 
         final String finalBodyStr = responseBodyStr;
         try {
-            final T t = (T) JSONObject.parseObject(finalBodyStr);
+            final JSONObject jsonObject = JSONObject.parseObject(finalBodyStr);
             OkDroid.mHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        onSuccess(response.code(), t);
+                        String msg = jsonObject.getString("msg");
+                        int code = jsonObject.getInteger("code");
+                        if (code == 888) {
+                            onNoLogin();
+                        } else if (code == 0){
+                            if (jsonObject.containsKey("data")) {
+                                String data = jsonObject.getString("data");
+                                onSuccess(response.code(), data);
+                            } else {
+                                onSuccess(response.code(), finalBodyStr);
+                            }
+                        } else {
+                            onFailed(code, msg);
+                        }
                     }
                 });
 
@@ -54,7 +67,7 @@ public abstract class JsonResHandler<T> implements IResponseHandler {
         }
     }
 
-    public void onSuccess(int statusCode, T response) {
+    public void onSuccess(int statusCode, String response) {
 
     }
 
@@ -62,4 +75,6 @@ public abstract class JsonResHandler<T> implements IResponseHandler {
     public void onProgress(long progress, long total) {
 
     }
+
+    public abstract void onNoLogin();
 }

@@ -21,7 +21,7 @@ import share.exchange.framework.utils.StringUtil;
  * e_mail：xiaoexiao51@163.com
  */
 public class OkDroid {
-
+    
     public static Handler mHandler = new Handler(Looper.getMainLooper());
     public static OkDroid mInstance;
     private OkHttpClient httpClient;

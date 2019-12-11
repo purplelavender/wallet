@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#ffffffff</color>
+    <color name="white">#ffffff</color>
     <color name="common_color_toast_success">#15c472</color>
     <color name="common_color_toast_warn">#feb600</color>
     <color name="color_title">#1F3F59</color>
@@ -9,5 +9,12 @@
     <color name="color_green">#03C088</color>
     <color name="color_black">#000000</color>
     <color name="transparent">#00000000</color>
+
+    <color name="black">#111111</color>
+    <color name="line_color">#88111111</color>
+    <color name="status_bar">#2451A6</color>
+    <color name="title_bar">#2451A6</color>
+    <color name="theme_body">#CC2451A6</color>
+    <color name="text_color">#CDCECE</color>
 
 </resources>

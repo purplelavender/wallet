@@ -28,7 +28,11 @@ public interface BaseMVP {
 
         void hideLoading();
 
+        void showLoginDialog();
+
         void showToast(CommonToast.ToastType toastType, String message);
+
+        boolean isFragmentAdd();
 
         /* getter to the view's presenter */
         P getPresenter();

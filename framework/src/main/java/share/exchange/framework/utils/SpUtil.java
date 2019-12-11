@@ -116,5 +116,21 @@ public class SpUtil {
         }
     }
 
+    /**
+     * 获取语言
+     * @param context
+     * @return
+     */
+    public static int getLanguage(Context context) {
+        return get(context, "language", 0);
+    }
 
+    /**
+     * 保存语言
+     * @param context
+     * @param language
+     */
+    public static void setLanguage(Context context, int language) {
+        put(context, "language", language);
+    }
 }

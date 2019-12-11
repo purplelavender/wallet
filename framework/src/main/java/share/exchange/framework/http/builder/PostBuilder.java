@@ -75,11 +75,11 @@ public class PostBuilder extends BaseHasParamRequestBuilder<PostBuilder> {
         }
     }
 
-    private void appendParams(FormBody.Builder builder, Map<String, String> params) {
+    private void appendParams(FormBody.Builder builder, Map<String, Object> params) {
         if (mParams != null && !params.isEmpty()) {
             for (String key :
                     params.keySet()) {
-                builder.add(key, params.get(key));
+                builder.add(key, params.get(key).toString());
             }
         }
     }

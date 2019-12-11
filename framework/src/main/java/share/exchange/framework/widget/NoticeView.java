@@ -112,11 +112,11 @@ public class NoticeView extends ViewFlipper {
         startFlipping();
     }
 
-    public void setData(List<NoticeBean.DataBean> data) {
+    public void setData(List<NoticeBean> data) {
         setData(R.layout.layout_notice_view, data);
     }
 
-    public void setData(@LayoutRes int layoutId, List<NoticeBean.DataBean> data) {
+    public void setData(@LayoutRes int layoutId, List<NoticeBean> data) {
         if (data.isEmpty()) {
             return;
         }

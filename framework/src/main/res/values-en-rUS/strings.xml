@@ -1,0 +1,39 @@
+<resources>
+    <string name="market_tips">Announcement</string>
+    <string name="is_loading">Loading&#8230;</string>
+    <string name="no_network">The network is not working, please try again later</string>
+    <string name="no_login">Your account is logged in somewhere else. Please change your password if you are not the user</string>
+    <string name="goto_login">Login Immediately</string>
+    <string name="re_loading">Reload</string>
+    <string name="no_result">No Record</string>
+
+    <!--permission strings-->
+    <string name="permission_deny_again_title">Permission Setting</string>
+    <string name="permission_deny_again_positive">Setting</string>
+    <string name="permission_deny_again_nagative">Cancel</string>
+    <string name="permission_not_ask_again">Required permissions are denied, please turn on Settings to enable the appropriate permissions</string>
+    <string name="permission_deny_tip">The permission is denied and needs to be set to use this function normally</string>
+    <string name="permission_sd_card_not_available">SD card not available</string>
+    <string name="permission_app_start">Please allow the application to obtain the following permissions for a better user experience:\nGet device ID and location for push\nCache some information to SD card</string>
+    <string name="permission_app_storage">Please allow the application to obtain the following permissions for a better user experience:\nCache some information to SD card</string>
+    <string name="permission_app_microphone">Please allow the application to obtain the following permissions for a better user experience:\nMicrophone use</string>
+    <string name="permission_app_photo">Please allow the application to obtain the following permissions for a better user experience:\nAccess photos and cameras on your storage device</string>
+    <string name="permission_app_camera">Please allow the application to obtain the following permissions for a better user experience:\nCamera use</string>
+    <string name="permission_app_local_video">Please allow the application to obtain the following permissions for a better user experience:\nAccess video on your storage device</string>
+    <string name="permission_app_storage_audio">Please allow the application to obtain the following permissions for a better user experience:\nAccess your SD card and microphone for use</string>
+    <string name="permission_app_location">Please allow the application to obtain the following permissions for a better user experience:\nGets your location information and GPS permissions</string>
+
+    <string name="all_images">All the pictures</string>
+    <string name="folder_image_count">A total of %1$d pieces</string>
+    <string name="preview_image_count">%1$d/%2$d</string>
+    <string name="select_limit">Choose %1$d pictures at most</string>
+    <string name="complete">Submit</string>
+    <string name="select_complete">Submit(%1$d/%2$d)</string>
+    <string name="preview_count">Preview(%1$d)</string>
+    <string name="photo_select">Picture Selector</string>
+    <string name="photo_crop">Picture Clipper</string>
+    <string name="origin">Original</string>
+    <string name="select">Select</string>
+    <string name="origin_size">Original(%s)</string>
+    <string name="photo_graph">Photograph</string>
+</resources>

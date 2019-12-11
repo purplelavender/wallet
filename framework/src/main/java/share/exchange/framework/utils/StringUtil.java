@@ -463,19 +463,6 @@ public class StringUtil {
         return dataList;
     }
 
-//    @SuppressWarnings(
-//            { "rawtypes", "unchecked" })
-//    public static List removeDuplicate2(List dataList) {
-//        Set set = new HashSet();
-//        List newList = new ArrayList();
-//        for (Object element : dataList) {
-//            if (set.add(element)) {
-//                newList.add(element);
-//            }
-//        }
-//        return newList;
-//    }
-
     /**
      * @param stringList
      * @param seperator
@@ -573,12 +560,12 @@ public class StringUtil {
      * @param paramMap
      * @return
      */
-    public static String getApiURL(String apiURL, Map<String, String> paramMap) {
-        Iterator<Map.Entry<String, String>> iter = paramMap.entrySet().iterator();
+    public static String getApiURL(String apiURL, Map<String, Object> paramMap) {
+        Iterator<Map.Entry<String, Object>> iter = paramMap.entrySet().iterator();
         StringBuilder sb = new StringBuilder();
         sb.append(apiURL);
         while (iter.hasNext()) {
-            Map.Entry<String, String> entry = iter.next();
+            Map.Entry<String, Object> entry = iter.next();
             if (sb.indexOf("?") != -1) {
                 sb.append("&");
             } else {
@@ -650,4 +637,19 @@ public class StringUtil {
             return diff > 0 ? 1 : -1;
         }
     }
+
+    /**
+     * 获取登场字符串的“*”字符串
+     * @param str
+     * @return
+     */
+    public static String getStarString(String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+        int length = str.length();
+        for (int i = 0; i < length; i++) {
+            stringBuilder.append("*");
+        }
+        return stringBuilder.toString();
+    }
+
 }

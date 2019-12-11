@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/icon_notice_new"/>
 
-        <org.coinbell.newcoinbell.widget.AutoSizeTextView
+        <share.exchange.framework.widget.AutoSizeTextView
             android:id="@+id/marquee_tv_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

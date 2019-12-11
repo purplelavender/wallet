@@ -1,7 +1,9 @@
 package share.exchange.framework.utils;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -13,8 +15,14 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.media.ExifInterface;
+import android.media.MediaMetadataRetriever;
 import android.media.ThumbnailUtils;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.os.Vibrator;
+import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +34,14 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Hashtable;
+
+import share.exchange.framework.R;
+import share.exchange.framework.widget.CommonToast;
 
 /**
  * 图片处理工具类
@@ -750,4 +766,278 @@ public class BitmapUtil {
         return BitmapFactory.decodeStream(inputStream);
     }
 
+    /**
+     * 保存图片到相册
+     * @param context
+     * @param bmp
+     * @return
+     */
+    public static File saveImage(Context context, Bitmap bmp) {
+        // 首先保存图片
+        File appDir = new File(Environment.getExternalStorageDirectory(), "/DCIM/Camera/");
+        if (!appDir.exists()) {
+            appDir.mkdirs();
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+        String fileName = "IMG_" + sdf.format(System.currentTimeMillis()) + ".jpg";
+        File file = new File(appDir, fileName);
+
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // 通知图库更新相册
+        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file)));
+        CommonToast.showToast(context, CommonToast.ToastType.TEXT, "Success");
+        return file;
+    }
+
+    /**
+     * 保存图片,自定义名字
+     *
+     * @param context
+     * @param bmp
+     * @param imageName
+     * @return
+     */
+    public static File saveImage(Context context, Bitmap bmp, String imageName) {
+        // 首先保存图片
+        File appDir = new File(Environment.getExternalStorageDirectory(), "/DCIM/Camera/");
+        if (!appDir.exists()) {
+            appDir.mkdirs();
+        }
+        String fileName = imageName + ".jpg";
+        File file = new File(appDir, fileName);
+
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
+    /**
+     * png格式保存图片
+     * @param context
+     * @param bmp
+     * @return
+     */
+    public static File saveImagePng(Context context, Bitmap bmp) {
+        // 首先保存图片
+        File appDir = new File(Environment.getExternalStorageDirectory(), "/DCIM/Camera/");
+        if (!appDir.exists()) {
+            appDir.mkdirs();
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+        String fileName = "IMG_" + sdf.format(System.currentTimeMillis()) + ".png";
+        File file = new File(appDir, fileName);
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
+
+    /**
+     * 根据图片路径获取Bitmap
+     * @param imageurl
+     * @return
+     */
+    public static Bitmap getBitmap(String imageurl) {
+        URL url;
+        HttpURLConnection connection = null;
+        Bitmap bitmap = null;
+        try {
+            url = new URL(imageurl);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setConnectTimeout(6000); //超时设置
+            connection.setDoInput(true);
+            connection.setUseCaches(false); //设置不使用缓存
+            InputStream inputStream = connection.getInputStream();
+            bitmap = BitmapFactory.decodeStream(inputStream);
+            inputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return bitmap;
+    }
+
+    /**
+     * 根据视频路径获取封面图
+     * @param context
+     * @param url
+     * @return
+     */
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    public static Bitmap createVideoThumbnail(Context context, String url) {
+
+        Bitmap bitmap = null;
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        int kind = MediaStore.Images.Thumbnails.MINI_KIND;
+        try {
+            if (Build.VERSION.SDK_INT >= 14) {
+                retriever.setDataSource(url, new HashMap<String, String>());
+            } else {
+                retriever.setDataSource(url);
+            }
+            bitmap = retriever.getFrameAtTime();
+        } catch (IllegalArgumentException ex) {
+            // Assume this is a corrupt video file
+        } catch (RuntimeException ex) {
+            // Assume this is a corrupt video file.
+        } finally {
+            try {
+                retriever.release();
+            } catch (RuntimeException ex) {
+                // Ignore failures while cleaning up.
+            }
+        }
+        if (kind == MediaStore.Images.Thumbnails.MICRO_KIND && bitmap != null) {
+            bitmap = ThumbnailUtils.extractThumbnail(bitmap,
+                    EnvironmentUtil.screenWidth(context),
+                    EnvironmentUtil.screenHeight(context),
+                    ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
+        }
+        return bitmap;
+    }
+
+    /**
+     * 根据视频路径获取封面图
+     * @param context
+     * @param url
+     * @return
+     */
+    public static Bitmap createVideoThumbnail(String filePath) {
+        Bitmap bitmap = null;
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        int kind = MediaStore.Images.Thumbnails.MINI_KIND;
+        try {
+            if (filePath.startsWith("http://")
+                    || filePath.startsWith("https://")
+                    || filePath.startsWith("widevine://")) {
+                retriever.setDataSource(filePath, new Hashtable<String, String>());
+            } else {
+                retriever.setDataSource(filePath);
+            }
+            bitmap = retriever.getFrameAtTime(-1);
+        } catch (IllegalArgumentException ex) {
+            // Assume this is a corrupt video file
+            ex.printStackTrace();
+        } catch (RuntimeException ex) {
+            // Assume this is a corrupt video file.
+            ex.printStackTrace();
+        } finally {
+            try {
+                retriever.release();
+            } catch (RuntimeException ex) {
+                // Ignore failures while cleaning up.
+                ex.printStackTrace();
+            }
+        }
+
+        if (bitmap == null) return null;
+
+        if (kind == MediaStore.Images.Thumbnails.MINI_KIND) {
+            // Scale down the bitmap if it's too large.
+            int width = bitmap.getWidth();
+            int height = bitmap.getHeight();
+            int max = Math.max(width, height);
+            if (max > 512) {
+                float scale = 512f / max;
+                int w = Math.round(scale * width);
+                int h = Math.round(scale * height);
+                bitmap = Bitmap.createScaledBitmap(bitmap, w, h, true);
+            }
+        } else if (kind == MediaStore.Images.Thumbnails.MICRO_KIND) {
+            bitmap = ThumbnailUtils.extractThumbnail(bitmap,
+                    96,
+                    96,
+                    ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
+        }
+        return bitmap;
+    }
+
+    /**
+     * 截屏并保存
+     * @param activity
+     * @return
+     */
+    public static Bitmap screenShot(AppCompatActivity activity) {
+        if (activity == null){
+            return null;
+        }
+        View view = activity.getWindow().getDecorView();
+        //允许当前窗口保存缓存信息
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+
+        //获取屏幕宽和高
+        int width = EnvironmentUtil.screenWidth(view.getContext());
+        int height = EnvironmentUtil.screenHeight(view.getContext());
+
+        // 全屏不用考虑状态栏，有导航栏需要加上导航栏高度
+        Bitmap bitmap = null;
+        try {
+            bitmap = Bitmap.createBitmap(view.getDrawingCache(), 0, 0, width, height);
+        } catch (Exception e) {
+            // 这里主要是为了兼容异形屏做的处理，我这里的处理比较仓促，直接靠捕获异常处理
+            // 其实vivo oppo等这些异形屏手机官网都有判断方法
+            // 正确的做法应该是判断当前手机是否是异形屏，如果是就用下面的代码创建bitmap
+
+
+            String msg = e.getMessage();
+            // 部分手机导航栏高度不占窗口高度，不用添加，比如OppoR15这种异形屏
+            if (msg.contains("<= bitmap.height()")){
+                try {
+                    bitmap = Bitmap.createBitmap(view.getDrawingCache(), 0, 0, width, height);
+                } catch (Exception e1) {
+                    msg = e1.getMessage();
+                    // 适配Vivo X21异形屏，状态栏和导航栏都没有填充
+                    if (msg.contains("<= bitmap.height()")) {
+                        try {
+                            bitmap = Bitmap.createBitmap(view.getDrawingCache(), 0, 0, width, height - 60);
+                        } catch (Exception e2) {
+                            e2.printStackTrace();
+                        }
+                    }else {
+                        e1.printStackTrace();
+                    }
+                }
+            }else {
+                e.printStackTrace();
+            }
+        }
+
+        //销毁缓存信息
+        view.destroyDrawingCache();
+        view.setDrawingCacheEnabled(false);
+
+        if (null != bitmap){
+            try {
+                saveImage(activity, bitmap);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return bitmap;
+    }
 }

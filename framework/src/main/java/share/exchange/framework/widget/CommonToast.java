@@ -27,6 +27,9 @@ public class CommonToast {
      * @param toastType
      */
     public static void showToast(Context context, ToastType toastType, String message) {
+        if (context == null) {
+            return;
+        }
         if (null == toastType) {
             toastType = ToastType.TEXT;
         }

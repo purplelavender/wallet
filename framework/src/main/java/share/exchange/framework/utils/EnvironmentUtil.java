@@ -14,6 +14,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
@@ -969,4 +970,17 @@ public class EnvironmentUtil {
         context.startActivity(Intent.createChooser(intent, "选择分享"));
     }
 
+    /**
+     * 修改程序语言
+     * @param context
+     * @param locale
+     */
+    public static void changeAppLanguage(Context context, Locale locale) {
+        // 设置程序语言
+        Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        Configuration configuration = resources.getConfiguration();
+        configuration.locale = locale;
+        resources.updateConfiguration(configuration, metrics);
+    }
 }

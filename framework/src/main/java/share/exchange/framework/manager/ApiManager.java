@@ -42,7 +42,7 @@ public class ApiManager {
      * @param params  接口参数
      * @param responseHandler
      */
-    public void get(String tag, String url, Map<String, String> params, IResponseHandler responseHandler) {
+    public void get(String tag, String url, Map<String, Object> params, IResponseHandler responseHandler) {
         Log.d(tag, StringUtil.getApiURL(url, params));
         OkDroid.getInstance().get().tag(tag).url(url).params(params).enqueue(responseHandler);
     }
@@ -54,7 +54,7 @@ public class ApiManager {
      * @param params
      * @param responseHandler
      */
-    public void post(String tag, String url, Map<String, String> params, IResponseHandler responseHandler) {
+    public void post(String tag, String url, Map<String, Object> params, IResponseHandler responseHandler) {
         Log.d(tag, StringUtil.getApiURL(url, params));
         OkDroid.getInstance().post().tag(tag).url(url).params(params).enqueue(responseHandler);
     }
@@ -78,8 +78,8 @@ public class ApiManager {
      * @param fileList  上传文件列表
      * @param responseHandler
      */
-    public void upload(String tag, String url, Map<String, String> params, List<File> fileList, IResponseHandler responseHandler) {
-        OkDroid.getInstance().upload().tag(tag).url(url).params(params).files("files[]", fileList).enqueue(responseHandler);
+    public void upload(String tag, String url, Map<String, Object> params, List<File> fileList, IResponseHandler responseHandler) {
+        OkDroid.getInstance().upload().tag(tag).url(url).params(params).files("files", fileList).enqueue(responseHandler);
     }
 
     /**

@@ -60,7 +60,7 @@ public class GetBuilder extends BaseHasParamRequestBuilder<GetBuilder> {
      * @param params
      * @return
      */
-    private String appendParams(String url, Map<String, String> params) {
+    private String appendParams(String url, Map<String, Object> params) {
         StringBuffer sb = new StringBuffer();
         sb.append(url + "?");
         for (String key :

@@ -21,6 +21,7 @@ public abstract class BasePresenter<V extends BaseMVP.MvpView> implements BaseMV
 
     protected AsyncExecutor executor;
     protected ApiManager apiManager;
+    protected int page = 1;
 
     public BasePresenter() {
         executor = new AsyncExecutor();

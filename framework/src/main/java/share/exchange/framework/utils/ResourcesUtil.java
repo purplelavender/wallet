@@ -65,9 +65,9 @@ public class ResourcesUtil {
     }
 
     public static void setBackground(@NonNull View view, Drawable drawable) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             view.setBackground(drawable);
-        else {
+        } else {
             view.setBackgroundDrawable(drawable);
         }
     }
@@ -79,6 +79,12 @@ public class ResourcesUtil {
      * @return
      */
     public static Spanned fromHtml(@NonNull String html) {
+        try {
+            html = html.replaceAll("text-align: right", "text-align: end");
+            html = html.replaceAll("text-align:right", "text-align: end");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY);
         } else {
