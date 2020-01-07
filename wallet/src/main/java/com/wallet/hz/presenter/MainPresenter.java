@@ -164,7 +164,7 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
 
             @Override
             public void onProgress(long progress, long total) {
-                long jindu = progress / total * 100;
+                long jindu = progress * 100 / total;
                 getView().showLoading( jindu + "%", true);
             }
 

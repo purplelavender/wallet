@@ -14,9 +14,9 @@
 
         <share.exchange.framework.widget.CircleImageView
             android:id="@+id/iv_success"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/icon_chenggong"/>
 
         <TextView
@@ -286,6 +286,39 @@
 
         <View
             android:id="@+id/line_hash_height"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <share.exchange.framework.widget.AutoSizeTextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_mark"
+                android:textSize="14sp"
+                android:textColor="@color/color_04041D"/>
+
+            <TextView
+                android:id="@+id/tv_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/color_black"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_remark"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/color_line"/>

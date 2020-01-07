@@ -279,7 +279,7 @@ public class BigDecimalUtils {
     }
 
     /**
-     * 将科学计数法转成正常显示的数字
+     * 将科学计数法转成正常显示的数字,并去掉多余的0
      * @param number
      * @return
      */
@@ -289,7 +289,7 @@ public class BigDecimalUtils {
 
     public static String formatServiceNumber(String number) {
         BigDecimal b = new BigDecimal(number + "");
-        return b.toPlainString();
+        return b.stripTrailingZeros().toPlainString();
     }
 
     /**

@@ -14,6 +14,7 @@ import butterknife.BindView;
 import share.exchange.framework.base.BaseAppActivity;
 import share.exchange.framework.utils.BigDecimalUtils;
 import share.exchange.framework.utils.EnvironmentUtil;
+import share.exchange.framework.widget.CircleImageView;
 import share.exchange.framework.widget.CommonToast;
 
 /**
@@ -24,6 +25,8 @@ import share.exchange.framework.widget.CommonToast;
  */
 public class CoinRecordDetailActivity extends BaseAppActivity {
 
+    @BindView(R.id.iv_success)
+    CircleImageView ivSuccess;
     @BindView(R.id.tv_success)
     TextView tvSuccess;
     @BindView(R.id.tv_time)
@@ -55,6 +58,12 @@ public class CoinRecordDetailActivity extends BaseAppActivity {
     LinearLayout llHashHeight;
     @BindView(R.id.line_hash_value)
     View lineHashNalue;
+    @BindView(R.id.ll_remark)
+    LinearLayout llRemark;
+    @BindView(R.id.tv_remark)
+    TextView tvRemark;
+    @BindView(R.id.line_remark)
+    View lineRemark;
 
     private CoinDetail coinDetail;
 
@@ -106,21 +115,26 @@ public class CoinRecordDetailActivity extends BaseAppActivity {
     protected void initCurrentData() {}
 
     private void changeUI() {
+        ivSuccess.setImageDrawable(coinDetail.getStatusDrawable(mAppContext));
         tvSuccess.setText(coinDetail.getTypeSuccessText(mAppContext));
         tvType.setText(coinDetail.getTypeText(mAppContext));
         tvAmount.setText(BigDecimalUtils.formatServiceNumber(coinDetail.getAmount()) + " " + coinDetail.getCoinname());
         tvTime.setText(coinDetail.getCreateTime());
         tvGathering.setText(coinDetail.getAddress());
         tvTransfer.setText(coinDetail.getFromaddress());
-        tvFee.setText(BigDecimalUtils.formatServiceNumber(coinDetail.getFeeAmount()) + " " + coinDetail.getCoinname());
+        tvFee.setText(BigDecimalUtils.formatServiceNumber(coinDetail.getKgfamount()) + " " + coinDetail.getCoinname());
         tvHashValue.setText(coinDetail.getTxash());
         tvHashHeight.setText(coinDetail.getTxheight());
+        tvRemark.setText(coinDetail.getRemarks());
 
         llFee.setVisibility(coinDetail.isIn() ? View.GONE : View.VISIBLE);
-        llHashValue.setVisibility(coinDetail.isIn() ? View.VISIBLE : View.GONE);
-        llHashHeight.setVisibility(coinDetail.isIn() ? View.VISIBLE : View.GONE);
+        llHashValue.setVisibility(coinDetail.isIn() && !coinDetail.isSpecialCoin() ? View.VISIBLE : View.GONE);
+        llHashHeight.setVisibility(coinDetail.isIn() && !coinDetail.isSpecialCoin() ? View.VISIBLE : View.GONE);
+        llRemark.setVisibility(coinDetail.isIn() || !coinDetail.isSpecialCoin() ? View.GONE : View.VISIBLE);
+
         lineFee.setVisibility(coinDetail.isIn() ? View.GONE : View.VISIBLE);
-        lineHashHeight.setVisibility(coinDetail.isIn() ? View.VISIBLE : View.GONE);
-        lineHashNalue.setVisibility(coinDetail.isIn() ? View.VISIBLE : View.GONE);
+        lineHashHeight.setVisibility(coinDetail.isIn() && !coinDetail.isSpecialCoin() ? View.VISIBLE : View.GONE);
+        lineHashNalue.setVisibility(coinDetail.isIn() && !coinDetail.isSpecialCoin() ? View.VISIBLE : View.GONE);
+        lineRemark.setVisibility(coinDetail.isIn() || !coinDetail.isSpecialCoin() ? View.GONE : View.VISIBLE);
     }
 }

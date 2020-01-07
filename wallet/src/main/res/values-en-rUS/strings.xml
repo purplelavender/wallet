@@ -31,6 +31,7 @@
     <string name="interface_no_yuyue">You have no reservation to queue</string>
     <string name="interface_in_yuyue">You are currently in the reservation queue, please do not repeat!</string>
     <string name="interface_copy_success">Copy Success</string>
+    <string name="interface_submit_success">Submit Success</string>
 
     <!-- interface error -->
     <string name="interface_error_yichang">Unknown exception, please contact administrator</string>
@@ -197,6 +198,7 @@
 
     <!-- 登录注册相关 -->
     <string name="login">Login</string>
+    <string name="login_logining">Logging In&#8230;</string>
     <string name="login_name">Name</string>
     <string name="login_name_tag">Please enter your custom account</string>
     <string name="login_password">Password</string>
@@ -268,6 +270,15 @@
     <string name="wallet_transfer_rule">Note :\n The minimum transfer amount is %1$s %2$s.\n Please check your payment address when transferring money, check the security of the network environment, and prevent information from being leaked.</string>
     <string name="wallet_hash_value">Hash Value</string>
     <string name="wallet_hash_height">Block Height</string>
+    <string name="wallet_new_gathering_notice">After transferring to this address, please be sure to upload the correct amount and the transfer voucher, otherwise it will not be able to arrive</string>
+    <string name="wallet_new_transfer_notice">(If you transfer money to Hilbert Space users, you need to note the other party to make the correct user name, otherwise you will not be able to get the account)</string>
+    <string name="wallet_new_count_tag">Please enter count</string>
+    <string name="wallet_new_address_tag">Please enter a payment address</string>
+    <string name="wallet_new_photo">Click to view the sample and upload(Less than 2M)</string>
+    <string name="wallet_new_photo_empty">Please select deposit certificate picture</string>
+    <string name="wallet_new_mark_empty">Please fill in the note information</string>
+    <string name="wallet_new_photo_big">Picture is too big</string>
+    <string name="wallet_new_photo_upload_fail">Upload failed, please switch network connection and try again</string>
 
     <!-- 模式相关 -->
     <string name="modle_project">Mobius Transform</string>
@@ -336,20 +347,25 @@
     <string name="group_node_three">Star 3 Node</string>
     <string name="group_node_four">Star 4 Node</string>
     <string name="group_node_five">Star 5 Node</string>
-    <string name="group_persional_join_earning">Personal Join Forces(USDT)</string>
+    <string name="group_persional_join_earning">Personal Forces Output(USDT)</string>
     <string name="group_total_num">Total Number</string>
-    <string name="group_total_earning_pcs">Community Total Forces(HS)</string>
-    <string name="group_total_earning_usdt">Community Total Forces(USDT)</string>
+    <string name="group_total_earning_pcs">Community Forces(HS)</string>
+    <string name="group_total_earning_usdt">Assets Forces(USDT)</string>
     <string name="group_friend">Community Members</string>
     <string name="group_look_friend">Check Members</string>
     <string name="group_today_earning">Today Join(USDT)</string>
     <string name="group_today_total_earning">Community Join(USDT)</string>
-    <string name="group_total_award">Total Earnings(USDT)</string>
+    <string name="group_total_award">Total Forces(USDT)</string>
     <string name="group_earning_info">Forces Info</string>
     <string name="group_invite_earning">Invite Earnings</string>
     <string name="group_node_earning">Node Forces</string>
-    <string name="group_node_total_earning">Node Total Forces(HS)</string>
-    <string name="group_tui_total_earning">Promote Total Forces(HS)</string>
+    <string name="group_node_total_earning">Node Forces(HS)</string>
+    <string name="group_tui_total_earning">Promote Forces(HS)</string>
+    <string name="group_tui_usdt_title">Assets Forces</string>
+    <string name="group_tui_hs_title">Promote Forces</string>
+    <string name="group_node_hs_title">Node Forces</string>
+    <string name="group_tui_today_total">Total Promotion:</string>
+    <string name="group_node_today_total">Total Nodes:</string>
 
     <!-- 各种列表状态，下拉展示 -->
     <string name="state_order_reply">Await</string>
@@ -370,12 +386,18 @@
     <string name="state_mingxi_type_value">Amplification Value</string>
     <string name="state_mingxi_type_dig">Release Assets</string>
     <string name="state_mingxi_type_tui">Promote Forces</string>
+    <string name="state_mingxi_type_tui_usdt">Assets Forces</string>
     <string name="state_mingxi_type_node">Node Forces</string>
     <string name="state_project_daibi">token</string>
     <string name="state_project_gonglian">Male Chain</string>
     <string name="state_project_success">Success</string>
     <string name="state_project_wait">Await</string>
     <string name="state_project_failed">Failure</string>
+    <string name="state_gathering_wait">Confirming&#8230;</string>
+    <string name="state_gathering_success">Gathering Success</string>
+    <string name="state_gathering_fail">Gathering Failed</string>
+    <string name="state_transfer_success">Transfer Success</string>
+    <string name="state_transfer_fail">Transfer Failed</string>
 
     <!-- 各种输入验证提示 -->
     <string name="check_name_empty">The account cannot be empty</string>

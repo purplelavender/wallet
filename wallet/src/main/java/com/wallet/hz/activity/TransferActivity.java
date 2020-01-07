@@ -11,12 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.wallet.hz.R;
+import com.wallet.hz.dialog.NoFundPasswordDialog;
 import com.wallet.hz.dialog.PayDetailDialog;
 import com.wallet.hz.dialog.SafeCheckDialog;
 import com.wallet.hz.model.CoinBalance;
 import com.wallet.hz.model.WalletInfo;
 import com.wallet.hz.presenter.TransferContract;
 import com.wallet.hz.presenter.TransferPresenter;
+import com.wallet.hz.utils.AppSpUtil;
 
 import java.util.List;
 
@@ -50,8 +52,11 @@ public class TransferActivity extends BaseAppMVPActivity<TransferPresenter> impl
     TextView tvCoinName;
     @BindView(R.id.tv_transfer_rule)
     TextView tvRule;
+    @BindView(R.id.tv_transfer_mark_tag)
+    TextView tvMarkTag;
 
     private WalletInfo mWalletInfo;
+    private boolean isSpecial = false;
     private String minimum = "0";
     private double feePrice = 0d;
 
@@ -72,6 +77,7 @@ public class TransferActivity extends BaseAppMVPActivity<TransferPresenter> impl
         showSuccessStateLayout();
 
         tvBalance.setText(getString(R.string.wallet_balance) + mWalletInfo.getBalance() + " " + mWalletInfo.getCoinName());
+        tvMarkTag.setVisibility(isSpecial ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -85,7 +91,7 @@ public class TransferActivity extends BaseAppMVPActivity<TransferPresenter> impl
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (BigDecimalUtils.isEightPoint(s.toString())){
+                if (BigDecimalUtils.isEightPoint(s.toString())) {
                     etAmount.setText(BigDecimalUtils.decimalPoint(s.toString(), 8));
                     etAmount.setSelection(etAmount.getText().length());
                 } else {
@@ -112,6 +118,7 @@ public class TransferActivity extends BaseAppMVPActivity<TransferPresenter> impl
     @Override
     public TransferPresenter injectDependencies() {
         mWalletInfo = (WalletInfo) getIntent().getSerializableExtra("wallet");
+        isSpecial = mWalletInfo.isSpecialCoin();
         return new TransferPresenter(this, mAppContext);
     }
 
@@ -157,11 +164,15 @@ public class TransferActivity extends BaseAppMVPActivity<TransferPresenter> impl
     @Override
     public void onTransferSuccess() {
         getPresenter().getTransferFee(mWalletInfo.getCoinName());
+        etAmount.setText("");
+        etAddress.setText("");
+        etMark.setText("");
     }
 
     private void transferEditCheck() {
         String count = etAmount.getText().toString();
         String address = etAddress.getText().toString();
+        String mark = etMark.getText().toString();
         if (StringUtil.isEmpty(count)) {
             showToast(CommonToast.ToastType.TEXT, getString(R.string.check_exchange_count_empty));
             return;
@@ -174,8 +185,15 @@ public class TransferActivity extends BaseAppMVPActivity<TransferPresenter> impl
             showToast(CommonToast.ToastType.TEXT, getString(R.string.check_address_empty));
             return;
         }
+        if (isSpecial && StringUtil.isEqual(address, mWalletInfo.getAddress())) {
+            if (StringUtil.isEmpty(mark)) {
+                showToast(CommonToast.ToastType.TEXT, getString(R.string.wallet_new_transfer_notice));
+                return;
+            }
+        }
         PayDetailDialog payDetailDialog = new PayDetailDialog(TransferActivity.this);
-        payDetailDialog.build(1, etAddress.getText().toString(), mWalletInfo.getAddress(), BigDecimalUtils.sub(etAmount.getText().toString(), BigDecimalUtils.mul(etAmount.getText().toString(), feePrice+ "")) + mWalletInfo.getCoinName())
+        payDetailDialog.build(1, etAddress.getText().toString(), mWalletInfo.getAddress(), BigDecimalUtils.sub(etAmount.getText().toString(),
+                BigDecimalUtils.mul(etAmount.getText().toString(), feePrice + "")) + mWalletInfo.getCoinName())
                 .setOnViewClicked(new PayDetailDialog.OnViewClicked() {
                     @Override
                     public void onSure() {
@@ -191,23 +209,42 @@ public class TransferActivity extends BaseAppMVPActivity<TransferPresenter> impl
     }
 
     private void showPasswordDialog() {
-        SafeCheckDialog safeCheckDialog = new SafeCheckDialog(TransferActivity.this);
-        safeCheckDialog.build().setOnViewClicked(new SafeCheckDialog.OnViewClicked() {
-            @Override
-            public void onSure(String password) {
-                getPresenter().transfer(mWalletInfo.getCoinName(), etAmount.getText().toString(), etAddress.getText().toString(), etMark.getText().toString(), BigDecimalUtils.mul(feePrice + "", etAmount.getText().toString()), password);
-            }
+        boolean isBindFund = AppSpUtil.getUserAvatar(mAppContext);
+        if (isBindFund) {
+            SafeCheckDialog safeCheckDialog = new SafeCheckDialog(TransferActivity.this);
+            safeCheckDialog.build().setOnViewClicked(new SafeCheckDialog.OnViewClicked() {
+                @Override
+                public void onSure(String password) {
+                    if (isSpecial) {
+                        getPresenter().specialTransfer(mWalletInfo.getCoinName(), etAmount.getText().toString(), etAddress.getText().toString(),
+                                etMark.getText().toString(), BigDecimalUtils.mul(feePrice + "", etAmount.getText().toString()), password);
+                    } else {
+                        getPresenter().transfer(mWalletInfo.getCoinName(), etAmount.getText().toString(), etAddress.getText().toString(), etMark
+                                .getText().toString(), BigDecimalUtils.mul(feePrice + "", etAmount.getText().toString()), password);
+                    }
+                }
 
-            @Override
-            public void onClose() {
+                @Override
+                public void onClose() {
 
-            }
-        });
-        safeCheckDialog.show();
+                }
+            });
+            safeCheckDialog.show();
+        } else {
+            NoFundPasswordDialog noFundPasswordDialog = new NoFundPasswordDialog(TransferActivity.this);
+            noFundPasswordDialog.build().setOnViewClicked(new NoFundPasswordDialog.OnViewClicked() {
+                @Override
+                public void onSure() {
+                    SetMoneyPasswordActivity.startIntentResult(TransferActivity.this, true, false, "", 135);
+                }
+            });
+            noFundPasswordDialog.show();
+        }
     }
 
-    private void requestCamera(){
-        performCodeWithPermission(getString(R.string.permission_app_camera), CommonConst.REQUEST_PERMISSION_CAMERA, CommonConst.PERMISSION_CAMERA_STORAGE);
+    private void requestCamera() {
+        performCodeWithPermission(getString(R.string.permission_app_camera), CommonConst.REQUEST_PERMISSION_CAMERA, CommonConst
+                .PERMISSION_CAMERA_STORAGE);
     }
 
     @Override

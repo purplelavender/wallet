@@ -105,4 +105,12 @@ public class WalletInfo implements Serializable {
     public void setVersion(int version) {
         this.version = version;
     }
+
+    /**
+     * 判断是不是特殊币种，特殊币种页面显示会不同
+     * @return
+     */
+    public boolean isSpecialCoin(){
+        return StringUtil.isEqual("VDS", getCoinName()) || StringUtil.isEqual("DDAM", getCoinName());
+    }
 }

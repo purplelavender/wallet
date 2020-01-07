@@ -44,6 +44,13 @@ public abstract class JsonResHandler implements IResponseHandler {
                         if (code == 888) {
                             onNoLogin();
                         } else if (code == 0){
+
+                            //因为钱包项目的某个接口改了基本数据结构，在外面加了个参数
+                            if (jsonObject.containsKey("totalusdt")) {
+                                double totalUsdt = jsonObject.getDouble("totalusdt");
+                                onTotalUsdt(totalUsdt);
+                            }
+
                             if (jsonObject.containsKey("data")) {
                                 String data = jsonObject.getString("data");
                                 onSuccess(response.code(), data);
@@ -73,6 +80,14 @@ public abstract class JsonResHandler implements IResponseHandler {
 
     @Override
     public void onProgress(long progress, long total) {
+
+    }
+
+    /**
+     * 因为钱包项目的某个接口改了基本数据结构，在外面加了个参数
+     * @param usdt
+     */
+    public void onTotalUsdt(double usdt) {
 
     }
 

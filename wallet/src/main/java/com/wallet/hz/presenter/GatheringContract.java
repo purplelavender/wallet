@@ -2,6 +2,9 @@ package com.wallet.hz.presenter;
 
 import android.graphics.Bitmap;
 
+import java.io.File;
+import java.util.ArrayList;
+
 import share.exchange.framework.base.BaseMVP;
 
 /**
@@ -17,10 +20,18 @@ public interface GatheringContract {
         void onAddressSuccess(String code);
 
         void onCreateSuccess(Bitmap bitmap);
+
+        void onImgUploadSuccess(String img);
+
+        void onGatheringSuccess();
     }
 
     interface Presenter {
 
         void createImage(String secret);
+
+        void uploadImage(ArrayList<File> files);
+
+        void specialGathering(String fromAddress, String toAddress, String count, String name, String image);
     }
 }

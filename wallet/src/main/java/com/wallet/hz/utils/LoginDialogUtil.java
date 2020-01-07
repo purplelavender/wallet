@@ -41,10 +41,10 @@ public class LoginDialogUtil {
             if (mLoginDialog.isShowing()) {
                 return;
             } else {
+                AppSpUtil.logout(activity);
                 mLoginDialog.build().setOnViewClicked(new LoginDialog.OnViewClicked() {
                     @Override
                     public void onSure() {
-                        AppSpUtil.logout(activity);
                         AppManager.getAppManager().appExit();
                         LoginActivity.startIntent(activity);
                     }

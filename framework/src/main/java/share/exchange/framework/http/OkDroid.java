@@ -36,9 +36,9 @@ public class OkDroid {
     private OkDroid() {
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         httpClient = new OkHttpClient.Builder()
-                .readTimeout(15, TimeUnit.SECONDS)//设置读取超时时间
-                .writeTimeout(15, TimeUnit.SECONDS)//设置写的超时时间
-                .connectTimeout(15, TimeUnit.SECONDS)//设置连接超时时间
+                .readTimeout(30, TimeUnit.SECONDS)//设置读取超时时间
+                .writeTimeout(30, TimeUnit.SECONDS)//设置写的超时时间
+                .connectTimeout(40, TimeUnit.SECONDS)//设置连接超时时间
                 .build();
     }
 

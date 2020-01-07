@@ -74,7 +74,26 @@ public class TransferPresenter extends BasePresenter<TransferContract.View> impl
         map.put("fee", fee);
         map.put("jypassword", password);
         map.put("token", AppSpUtil.getUserToken(mContext));
-        apiManager.post(TAG, ApiConstant.URL_WALLET_TRANSFER, map, new JsonResHandler() {
+        String api = ApiConstant.URL_WALLET_TRANSFER;
+        requestTransfer(api, map);
+    }
+
+    @Override
+    public void specialTransfer(String name, String count, String address, String mark, String fee, String password) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("amount", count);
+        map.put("toaddress", address);
+        map.put("biname", name.toLowerCase());
+        map.put("remarks", mark);
+        map.put("kgamount", fee);
+        map.put("jypassword", password);
+        map.put("token", AppSpUtil.getUserToken(mContext));
+        String api = ApiConstant.URL_WALLET_SPECIAL_TRANSFER;
+        requestTransfer(api, map);
+    }
+
+    private void requestTransfer(String api, HashMap<String, Object> map) {
+        apiManager.post(TAG, api, map, new JsonResHandler() {
 
             @Override
             public void onSuccess(int statusCode, String response) {
@@ -92,6 +111,5 @@ public class TransferPresenter extends BasePresenter<TransferContract.View> impl
                 getView().showToast(CommonToast.ToastType.TEXT, InterfaceErrorUtil.changeLanguageErrorString(mContext, errMsg));
             }
         });
-
     }
 }

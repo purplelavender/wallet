@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_tuiguang_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="--"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_tuiguang_amount_usdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="--"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tuiguang_hs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="5dp">
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_tuiguang_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="--"
+            android:textSize="12sp"
+            android:textColor="@color/color_04041D"/>
+
+        <share.exchange.framework.widget.AutoSizeTextView
+            android:id="@+id/tv_tuiguang_amount_hs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="--"
+            android:textSize="12sp"
+            android:textColor="@color/color_green"/>
+
+    </LinearLayout>
+
+</LinearLayout>

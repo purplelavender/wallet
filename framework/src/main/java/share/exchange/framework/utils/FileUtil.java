@@ -1035,4 +1035,40 @@ public class FileUtil {
         }
     }
 
+    /**
+     * 获取全路径
+     *
+     * @param fname 目录或文件的相对路径
+     * @return 全路径
+     */
+    public static String getFullPath(Context context, String fname) {
+        if (null == fname) {
+            return null;
+        }
+        // 统一folder为 '/somepath'的格式
+        if (fname.startsWith(File.separator)) {
+            fname = fname.substring(1, fname.length());
+        }
+        String fatherDirPath;
+        if (FileUtil.checkSDCARDExists(context)) {
+            try {
+                fatherDirPath = context.getExternalFilesDir("").getParentFile().getPath() + File.separator;
+            } catch (Exception e) {
+                e.printStackTrace();
+                fatherDirPath = Environment.getExternalStorageDirectory() + "/Android/data/" + context.getPackageName() + File.separator;
+            }
+        } else {
+            try {
+                fatherDirPath = context.getCacheDir().getParentFile().getPath() + File.separator;
+            } catch (Exception e) {
+                e.printStackTrace();
+                fatherDirPath = Environment.getDataDirectory() + "/data/" + context.getPackageName() + File.separator;
+            }
+        }
+        File file = new File(fatherDirPath + fname);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        return fatherDirPath + fname;
+    }
 }

@@ -37,6 +37,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
 
     @Override
     public void login(String userName, String password) {
+        getView().showLoading(mContext.getString(R.string.login_logining));
         HashMap<String, Object> map = new HashMap<>();
         map.put("mobile", userName);
         map.put("password", password);
@@ -44,11 +45,16 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
 
             @Override
             public void onSuccess(int statusCode, String response) {
-                LoginInfo loginInfo = JSON.parseObject(response, LoginInfo.class);
-                if (loginInfo != null) {
-                    getView().showToast(CommonToast.ToastType.TEXT, mContext.getString(R.string.interface_login_success));
-                    AppSpUtil.setUserToken(mContext, loginInfo.getToken());
-                    getView().onLoginSuccess();
+                getView().hideLoading();
+                try {
+                    LoginInfo loginInfo = JSON.parseObject(response, LoginInfo.class);
+                    if (loginInfo != null) {
+                        getView().showToast(CommonToast.ToastType.TEXT, mContext.getString(R.string.interface_login_success));
+                        AppSpUtil.setUserToken(mContext, loginInfo.getToken());
+                        getView().onLoginSuccess();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
 
@@ -58,6 +64,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View> implements
 
             @Override
             public void onFailed(int statusCode, String errMsg) {
+                getView().hideLoading();
                 getView().showToast(CommonToast.ToastType.TEXT, InterfaceErrorUtil.changeLanguageErrorString(mContext, errMsg));
             }
         });

@@ -172,6 +172,16 @@
             android:layout_marginRight="10dp"
             android:background="@color/color_line"/>
 
+        <TextView
+            android:id="@+id/tv_transfer_mark_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/wallet_new_transfer_notice"
+            android:textSize="12sp"
+            android:textColor="@color/tab_selected_color"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

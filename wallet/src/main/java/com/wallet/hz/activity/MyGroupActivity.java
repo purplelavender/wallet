@@ -12,6 +12,7 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.wallet.hz.R;
 import com.wallet.hz.adapter.GroupInfoDataAdapter;
 import com.wallet.hz.model.GroupInfo;
+import com.wallet.hz.model.GroupInfoData;
 import com.wallet.hz.presenter.MyGroupContract;
 import com.wallet.hz.presenter.MyGroupPresenter;
 import com.wallet.hz.utils.AppSpUtil;
@@ -19,8 +20,10 @@ import com.wallet.hz.utils.LoginDialogUtil;
 
 import butterknife.BindView;
 import share.exchange.framework.base.BaseAppMVPActivity;
+import share.exchange.framework.base.BaseRecyclerViewAdapter;
 import share.exchange.framework.utils.StringUtil;
 import share.exchange.framework.widget.LinearDividerItemDecoration;
+import share.exchange.framework.widget.MyScrollView;
 
 /**
  * @ClassName: MyGroupActivity
@@ -30,6 +33,8 @@ import share.exchange.framework.widget.LinearDividerItemDecoration;
  */
 public class MyGroupActivity extends BaseAppMVPActivity<MyGroupPresenter> implements MyGroupContract.View {
 
+    @BindView(R.id.scroll_view)
+    MyScrollView mScrollView;
     @BindView(R.id.tv_group_node)
     TextView tvGroupNode;
     @BindView(R.id.tv_group_persion_join)
@@ -75,6 +80,7 @@ public class MyGroupActivity extends BaseAppMVPActivity<MyGroupPresenter> implem
 
         tvMyCode.setText(userName);
         changeNodeView();
+        mScrollView.scrollTo(0, 0);
     }
 
     @Override
@@ -134,6 +140,16 @@ public class MyGroupActivity extends BaseAppMVPActivity<MyGroupPresenter> implem
             rvGroupEarning.setAdapter(mAdapter);
             rvGroupEarning.setLoadingMoreEnabled(false);
             rvGroupEarning.setPullRefreshEnabled(false);
+
+            mAdapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener() {
+                @Override
+                public void onClick(View view, Object item) {
+                    GroupInfoData infoData = (GroupInfoData) item;
+                    if (infoData.getTuiType() != 2) {
+                        TuiDetailListActivity.startIntent(MyGroupActivity.this, infoData);
+                    }
+                }
+            });
         } else {
             mAdapter.notifyDataSetChanged();
             if (rvGroupEarning != null) {

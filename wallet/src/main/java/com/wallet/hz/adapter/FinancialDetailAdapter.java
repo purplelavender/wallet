@@ -80,7 +80,7 @@ public class FinancialDetailAdapter extends BaseRecyclerViewAdapter<FinancialDet
                 amount = BigDecimalUtils.formatServiceNumber(item.getWkamount());
                 break;
             case 7:
-                name = mContext.getString(R.string.state_mingxi_type_tui);
+                name = StringUtil.isEqual("USDT", item.getCoinname()) ? mContext.getString(R.string.state_mingxi_type_tui_usdt) : mContext.getString(R.string.state_mingxi_type_tui);
                 amount = BigDecimalUtils.formatServiceNumber(item.getWkamount());
                 break;
             case 8:

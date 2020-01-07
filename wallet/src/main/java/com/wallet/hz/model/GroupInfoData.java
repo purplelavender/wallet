@@ -17,20 +17,20 @@ import share.exchange.framework.utils.StringUtil;
 public class GroupInfoData implements Serializable {
 
     /**
-     * {
-     *                 coinname = usdt;
-     *                 datas = "2019-11-09";
-     *                 id = 2;
-     *                 tamount = 50;
-     *                 type = 1;  1推广2节点 ,
-     *                 userId = 3;
-     *             }
+     * "coinname":"hs",
+     *             "datas":"2019-12-17",
+     *             "id":346,
+     *             "tamount":100,
+     *             "type":2,
+     *             "usdtamount":10,
+     *             "userId":480
      */
 
     private String coinname;
     private String datas;
     private int id;
     private double tamount;
+    private double usdtamount;
     private int type;
     private int userId;
 
@@ -82,6 +82,14 @@ public class GroupInfoData implements Serializable {
         this.userId = userId;
     }
 
+    public double getUsdtamount() {
+        return usdtamount;
+    }
+
+    public void setUsdtamount(double usdtamount) {
+        this.usdtamount = usdtamount;
+    }
+
     /**
      * 获取对应的类别名
      * @param mContext
@@ -91,7 +99,7 @@ public class GroupInfoData implements Serializable {
         String name = "";
         switch (getType()) {
             case 1:
-                name = mContext.getString(R.string.state_mingxi_type_tui);
+                name = StringUtil.isEqual("USDT", getCoinname()) ? mContext.getString(R.string.state_mingxi_type_tui_usdt) : mContext.getString(R.string.state_mingxi_type_tui);
                 break;
             case 2:
                 name = mContext.getString(R.string.state_mingxi_type_node);
@@ -101,5 +109,24 @@ public class GroupInfoData implements Serializable {
                 break;
         }
         return name;
+    }
+
+    /**
+     * 获取推广类型
+     * @return 0  USDT推广； 1  HS推广； 2  节点（暂时不处理）
+     */
+    public int getTuiType() {
+        int type;
+        switch (getType()) {
+            case 1:
+                type = StringUtil.isEqual("USDT", getCoinname()) ? 0 : 1;
+                break;
+            case 2:
+            case 0:
+            default:
+                type = 2;
+                break;
+        }
+        return type;
     }
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.content.FileProvider;
 import android.view.View;
+import android.widget.TextView;
 
 import com.wallet.hz.R;
 import com.wallet.hz.activity.FinancialDetailActivity;
@@ -53,6 +54,8 @@ public class MineFragment extends BaseAppMVPFragment<MainPresenter> implements M
     AutoSizeTextView tvName;
     @BindView(R.id.tv_user_id)
     AutoSizeTextView tvId;
+    @BindView(R.id.tv_version_name)
+    TextView tvVersionName;
 
     private String filePath = Environment.getExternalStorageDirectory() + "/Hilbert";
     private String fileName = filePath + "/hilbert.apk";
@@ -75,6 +78,8 @@ public class MineFragment extends BaseAppMVPFragment<MainPresenter> implements M
         super.initView(savedInstanceState);
         showSuccessStateLayout();
         showTitleBar(false);
+        String versionCode = EnvironmentUtil.getVersionName(mAppContext);
+        tvVersionName.setText(versionCode);
     }
 
     @Override
@@ -144,7 +149,6 @@ public class MineFragment extends BaseAppMVPFragment<MainPresenter> implements M
 
     @Override
     public void onVersionSuccess(final VersionInfo versionInfo) {
-        final String fileName = Environment.getExternalStorageDirectory() + "/Hilbert/hilbert.apk";
         if (versionInfo != null) {
             String versionCode = EnvironmentUtil.getVersionName(mAppContext);
             String webVersionCode = versionInfo.getVersionCode();

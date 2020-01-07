@@ -40,16 +40,19 @@ public class CoinDetailAdapter extends BaseRecyclerViewAdapter<CoinDetail, CoinD
     protected void bindDataToItemView(CoinDetailHolder coinDetailHolder, CoinDetail item) {
         if (!item.isIn()) {
             coinDetailHolder.ivType.setImageResource(R.drawable.icon_zhuanchu);
-            coinDetailHolder.tvAmount.setText(BigDecimalUtils.formatServiceNumber(item.getAmount()));
+            coinDetailHolder.tvAmount.setText("- " + BigDecimalUtils.formatServiceNumber(item.getAmount()));
             coinDetailHolder.tvAmount.setTextColor(ResourcesUtil.getColor(mContext, R.color.tab_selected_color));
             coinDetailHolder.tvAddress.setText(item.getFromaddress());
         } else {
             coinDetailHolder.ivType.setImageResource(R.drawable.icon_zhuanru);
-            coinDetailHolder.tvAmount.setText(BigDecimalUtils.formatServiceNumber(item.getAmount()));
+            coinDetailHolder.tvAmount.setText("+ " + BigDecimalUtils.formatServiceNumber(item.getAmount()));
             coinDetailHolder.tvAmount.setTextColor(ResourcesUtil.getColor(mContext, R.color.color_green));
             coinDetailHolder.tvAddress.setText(item.getAddress());
         }
         coinDetailHolder.tvTime.setText(item.getCreateTime());
+        coinDetailHolder.tvStatus.setText(item.getTypeSuccessText(mContext));
+        coinDetailHolder.tvStatus.setTextColor(item.getStatusTextColor(mContext));
+        coinDetailHolder.tvStatus.setVisibility(item.isSpecialCoin() ? View.VISIBLE : View.GONE);
     }
 
     @NonNull
@@ -66,6 +69,7 @@ public class CoinDetailAdapter extends BaseRecyclerViewAdapter<CoinDetail, CoinD
         AutoSizeTextView tvAmount;
         AutoSizeTextView tvTime;
         TextView tvAddress;
+        AutoSizeTextView tvStatus;
 
         public CoinDetailHolder(View itemView) {
             super(itemView);
@@ -73,6 +77,7 @@ public class CoinDetailAdapter extends BaseRecyclerViewAdapter<CoinDetail, CoinD
             tvAmount = getView(R.id.tv_record_amount);
             tvTime = getView(R.id.tv_record_time);
             tvAddress = getView(R.id.tv_record_address);
+            tvStatus = getView(R.id.tv_record_status);
         }
     }
 }

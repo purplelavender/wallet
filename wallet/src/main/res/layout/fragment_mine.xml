@@ -340,9 +340,18 @@
                 <share.exchange.framework.widget.AutoSizeTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
                     android:text="@string/mine_check_version"
+                    android:textColor="@color/color_black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_version_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.0.0"
                     android:textColor="@color/color_black"
                     android:textSize="16sp"/>
 

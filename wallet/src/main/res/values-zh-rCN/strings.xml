@@ -31,6 +31,7 @@
     <string name="interface_no_yuyue">您还没有预约排队</string>
     <string name="interface_in_yuyue">您当前已在预约排队中，请勿重复参与！</string>
     <string name="interface_copy_success">复制成功</string>
+    <string name="interface_submit_success">提交成功</string>
 
     <!-- interface error -->
     <string name="interface_error_yichang">未知异常，请联系管理员</string>
@@ -197,6 +198,7 @@
 
     <!-- 登录注册相关 -->
     <string name="login">登录</string>
+    <string name="login_logining">登录中&#8230;</string>
     <string name="login_name">帐号</string>
     <string name="login_name_tag">请输入自定义帐号</string>
     <string name="login_password">密码</string>
@@ -268,6 +270,15 @@
     <string name="wallet_transfer_rule">注:\n最小转账数量为：%1$s %2$s。\n请您转账时务必核对您的收款地址，检测网络环境安全，防止信息被泄露。</string>
     <string name="wallet_hash_value">哈希值</string>
     <string name="wallet_hash_height">区块高度</string>
+    <string name="wallet_new_gathering_notice">向该地址转账后，请务必上传转入的正确数量和转账凭证，否则无法到账</string>
+    <string name="wallet_new_transfer_notice">(如转账给Hilbert Space用户需备注对方做正确的用户名，否则无法到账)</string>
+    <string name="wallet_new_count_tag">请输入数量</string>
+    <string name="wallet_new_address_tag">请输入付款地址</string>
+    <string name="wallet_new_photo">点击查看样例并上传(小于2M)</string>
+    <string name="wallet_new_photo_empty">请选择充币凭证图片</string>
+    <string name="wallet_new_mark_empty">请填写备注信息</string>
+    <string name="wallet_new_photo_big">图片过大</string>
+    <string name="wallet_new_photo_upload_fail">上传失败，请切换网络连接，重新尝试</string>
 
     <!-- 模式相关 -->
     <string name="modle_project">莫比乌斯变换</string>
@@ -336,20 +347,25 @@
     <string name="group_node_three">三星节点</string>
     <string name="group_node_four">四星节点</string>
     <string name="group_node_five">五星节点</string>
-    <string name="group_persional_join_earning">个人参与算力(USDT)</string>
+    <string name="group_persional_join_earning">个人算力产出(USDT)</string>
     <string name="group_total_num">社群总人数</string>
-    <string name="group_total_earning_pcs">社群总算力(HS)</string>
-    <string name="group_total_earning_usdt">社群总算力(USDT)</string>
+    <string name="group_total_earning_pcs">社群算力(HS)</string>
+    <string name="group_total_earning_usdt">资产算力(USDT)</string>
     <string name="group_friend">社群伙伴</string>
     <string name="group_look_friend">查看成员</string>
     <string name="group_today_earning">当日参与(USDT)</string>
     <string name="group_today_total_earning">当日社群参与(USDT)</string>
-    <string name="group_total_award">总业绩(USDT)</string>
+    <string name="group_total_award">总算力(USDT)</string>
     <string name="group_earning_info">算力信息</string>
     <string name="group_invite_earning">邀请收益</string>
     <string name="group_node_earning">节点算力</string>
-    <string name="group_node_total_earning">节点总算力(HS)</string>
-    <string name="group_tui_total_earning">推广总算力(HS)</string>
+    <string name="group_node_total_earning">节点算力(HS)</string>
+    <string name="group_tui_total_earning">推广算力(HS)</string>
+    <string name="group_tui_usdt_title">资产算力</string>
+    <string name="group_tui_hs_title">推广算力</string>
+    <string name="group_node_hs_title">节点算力</string>
+    <string name="group_tui_today_total">当日推广合计：</string>
+    <string name="group_node_today_total">当日节点合计：</string>
 
     <!-- 各种列表状态，下拉展示 -->
     <string name="state_order_reply">待回复</string>
@@ -370,12 +386,18 @@
     <string name="state_mingxi_type_value">价值放大</string>
     <string name="state_mingxi_type_dig">释放资产</string>
     <string name="state_mingxi_type_tui">推广算力</string>
+    <string name="state_mingxi_type_tui_usdt">资产算力</string>
     <string name="state_mingxi_type_node">节点算力</string>
     <string name="state_project_daibi">代币</string>
     <string name="state_project_gonglian">公链</string>
     <string name="state_project_success">审核成功</string>
     <string name="state_project_wait">待审核</string>
     <string name="state_project_failed">审核失败</string>
+    <string name="state_gathering_wait">确认中&#8230;</string>
+    <string name="state_gathering_success">收款成功</string>
+    <string name="state_gathering_fail">收款失败</string>
+    <string name="state_transfer_success">转账成功</string>
+    <string name="state_transfer_fail">转账失败</string>
 
     <!-- 各种输入验证提示 -->
     <string name="check_name_empty">帐号不能为空</string>

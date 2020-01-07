@@ -14,6 +14,8 @@ import java.util.HashMap;
 
 import share.exchange.framework.base.BasePresenter;
 import share.exchange.framework.http.response.JsonResHandler;
+import share.exchange.framework.utils.FileUtil;
+import share.exchange.framework.utils.ImageCompressUtils;
 import share.exchange.framework.widget.CommonToast;
 
 /**
@@ -37,8 +39,34 @@ public class WorkOrderAddPresenter extends BasePresenter<WorkOrderAddContract.Vi
     }
 
     @Override
-    public void uploadImg(ArrayList<File> files) {
+    public void destroyView() {
+        super.destroyView();
+        FileUtil.clearDirectory(new File(FileUtil.getFullPath(mContext, "image/temp/")));
+    }
+
+    @Override
+    public void uploadImg(final ArrayList<File> files) {
         getView().showLoading(mContext.getString(R.string.interface_upload_photo));
+        ArrayList<String> imageList = new ArrayList<>();
+        for (File file : files) {
+            imageList.add(file.getAbsolutePath());
+        }
+        ImageCompressUtils imageCompresser = ImageCompressUtils.from(mContext, FileUtil.getFullPath(mContext, "image/temp/"))
+                .load(imageList);
+        imageCompresser.execute(new ImageCompressUtils.OnCompressListener() {
+            @Override
+            public void onSuccess(ArrayList<File> file) {
+                upload(file);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                upload(files);
+            }
+        });
+    }
+
+    private void upload(ArrayList<File> files) {
         apiManager.upload(TAG, ApiConstant.URL_UPLOAD, null, files, new JsonResHandler() {
 
             @Override

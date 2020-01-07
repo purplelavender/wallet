@@ -24,5 +24,7 @@ public interface TransferContract {
         void getTransferFee(String name);
 
         void transfer(String name, String count, String address, String mark, String fee, String password);
+
+        void specialTransfer(String name, String count, String address, String mark, String fee, String password);
     }
 }

@@ -57,6 +57,12 @@ public class ApiConstant {
     public static final String URL_INVITE_EARNING_LIST = WEB_URL + "/api/shequ/star";
     //获取服務協議
     public static final String URL_SERVICE_AGREEMENT = WEB_URL + "/api/agreement";
+    //获取hs推广收益
+    public static final String URL_TUI_HS_LIST = WEB_URL + "/api/hs/list";
+    //获取usdt推广收益
+    public static final String URL_TUI_USDT_LIST = WEB_URL + "/api/usdt/list";
+    //获取hs节点收益
+    public static final String URL_NODE_HS_LIST = WEB_URL + "/api/jiedian/list";
 
     /*************************************** 钱包相关 ****************************************/
     //删除充币地址
@@ -77,6 +83,10 @@ public class ApiConstant {
     public static final String URL_WALLET_COIN_DETAIL_LIST = WEB_URL + "/api/coin/list";
     //转账
     public static final String URL_WALLET_TRANSFER = WEB_URL + "/api/tibi";
+    //特殊币种的充币
+    public static final String URL_WALLET_SPECIAL_GATHERING = WEB_URL + "/api/shoukuan";
+    //特殊页面的提币
+    public static final String URL_WALLET_SPECIAL_TRANSFER = WEB_URL + "/api/zhuanzhang";
 
     /*************************************** 注册绑定找回相关 ****************************************/
     //绑定手机

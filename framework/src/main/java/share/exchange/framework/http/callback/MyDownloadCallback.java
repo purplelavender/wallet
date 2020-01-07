@@ -1,16 +1,22 @@
 package share.exchange.framework.http.callback;
 
+import android.app.Activity;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
+import share.exchange.framework.R;
 import share.exchange.framework.http.OkDroid;
 import share.exchange.framework.http.response.IResponseDownloadHandler;
+import share.exchange.framework.manager.AppManager;
 
 /**
  * Created by MMM on 2018/1/10.
@@ -30,12 +36,29 @@ public class MyDownloadCallback implements Callback {
 
     @Override
     public void onFailure(Call call, final IOException e) {
-        OkDroid.mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                mResponseDownloadHandler.onFailed(e.toString());
+        if (e instanceof SocketTimeoutException || e instanceof ConnectException) {
+            //判断超时异常
+            //判断连接异常
+            Activity activity = AppManager.getAppManager().currentActivity();
+            String errStr = "";
+            if (activity != null && !activity.isFinishing()) {
+                errStr = activity.getString(R.string.no_network);
             }
-        });
+            final String finalErrStr = errStr;
+            OkDroid.mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    mResponseDownloadHandler.onFailed(finalErrStr);
+                }
+            });
+        } else {
+            OkDroid.mHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    mResponseDownloadHandler.onFailed(e.toString());
+                }
+            });
+        }
     }
 
     @Override
